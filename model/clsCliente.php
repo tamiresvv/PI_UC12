@@ -2,10 +2,10 @@
 
 class Cliente {
     private $id, $nome, $telefone, $email, $cpf,
-            $senha, $filhos, $cidade, $foto, $sexo, $admin;
+            $senha, $cidade, $foto, $sexo, $admin;
     
     function __construct($id = NULL, $nome = NULL, $telefone = NULL, 
-            $email = NULL, $cpf = NULL, $senha = NULL, $filhos = NULL, 
+            $email = NULL, $cpf = NULL, $senha = NULL,  
             $cidade = NULL, $foto = NULL, $sexo = NULL) {
         $this->id = $id;
         $this->nome = $nome;
