@@ -13,19 +13,19 @@ if (session_status() != PHP_SESSION_ACTIVE) {
             $_SESSION['logado'] == TRUE) {
         ?>
         
-        <a href="marcarConsulta.php">
-            <button>Agendar Consulta</button></a>
         <a href="consultas.php">
-            <button>Minhas Consultas</button></a>
+            <button>Consultas</button></a>
         <a href="horarios.php">
             <button>Horários</button></a>
     
     <?php
     if(isset($_SESSION['admin'])&& $_SESSION['admin']){
-        echo '<a href="clientes.php">'; 
-        echo '<button>Cliente</button></a>';
-        echo '<a href="cidades.php">'; 
-        echo '<button>Cidades</button></a>';
+        echo ' <a href="clientes.php">'; 
+        echo ' <button>Clientes</button></a>';
+        echo ' <a href="medicos.php">';
+        echo ' <button>Médicos</button></a>';
+        echo ' <a href="cidades.php">'; 
+        echo ' <button>Cidades</button></a>';  
         
     }
                 ?>

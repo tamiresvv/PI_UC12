@@ -45,6 +45,7 @@ if(isset($_SESSION['admin'])&& $_SESSION['admin']){
                 <th>E-mail</th>
                 <th>Cidade</th>
                 <th>Sexo</th>
+                <th>Médico</th>
                 <th><h2>Editar</h2></th>
                 <th><h3>Excluir</h3></th>
             </tr>
@@ -63,6 +64,11 @@ if(isset($_SESSION['admin'])&& $_SESSION['admin']){
                             echo '   <td>Feminino</td>';
                         else
                             echo '   <td>Masculino</td>';
+                        
+                        if( $cli->getMedico() )
+                            echo '   <td>Sim</td>';
+                        else
+                            echo '   <td>Não</td>';
                         
                         echo '   <td><a href="frmCliente.php?editar&idCliente='.$cli->getId().'" ><button>Editar</button></a></td>';
                         echo '   <td><a href="controller/salvarCliente.php?excluir&idCliente='.$cli->getId().'" ><button>Excluir</button></a></td>';
