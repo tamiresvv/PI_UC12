@@ -17,18 +17,8 @@ if (isset($_REQUEST['inserir'])) {
         $cliente->setNome($_POST['txtNome']);
         $cliente->setTelefone($_POST['txtTelefone']);
         $cliente->setEmail($_POST['txtEmail']);
-        $cliente->setCpf($_POST['txtCPF']);        
-
-        if (isset($_POST['cbAdmin'])) {
-            $cliente->setAdmin(1);
-        } else {
-            $cliente->setAdmin(0);
-        }
-        if (isset($_POST['cbMedico'])) {
-            $cliente->setMedico(1);
-        } else {
-            $cliente->setMedico(0);
-        }
+        $cliente->setCpf($_POST['txtCPF']);                
+        $cliente->setTipo($_POST['tipo']);                
         $cliente->setSexo($_POST['rbSexo']);
         $senha = md5($senha);
         $cliente->setSenha($senha);
@@ -64,19 +54,9 @@ if (isset($_REQUEST['editar'])) {
     $cliente->setNome($_POST['txtNome']);
     $cliente->setTelefone($_POST['txtTelefone']);
     $cliente->setEmail($_POST['txtEmail']);
-    $cliente->setCpf($_POST['txtCPF']);    
-    if (isset($_POST['cbAdmin'])) {
-            $cliente->setAdmin(1);
-        } else {
-            $cliente->setAdmin(0);
-        }
-    if (isset($_POST['cbMedico'])) {
-            $cliente->setMedico(1);
-        } else {
-            $cliente->setMedico(0);
-        }
-    $cliente->setSexo($_POST['rbSexo']);
-
+    $cliente->setCpf($_POST['txtCPF']);   
+    $cliente->setSexo($_POST['rbSexo']);    
+    $cliente->setTipo($_POST['tipo']); 
     $cid = new Cidade();
     $cid->setId($_POST['cidade']);
     $cliente->setCidade($cid);

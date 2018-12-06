@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Description of clsCidade
- *
- * @author assparremberger
- * 25/10/2018
- */
 class Cidade {
     private $id;
     private $nome;
