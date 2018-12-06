@@ -6,6 +6,9 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 <header>
     <a href="index.php">
         <button>Início</button></a>
+    
+    <a href="horarios.php">
+        <button>Sobre</button></a>
 
 
     <?php
@@ -15,8 +18,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
         
         <a href="consultas.php">
             <button>Consultas</button></a>
-        <a href="horarios.php">
-            <button>Horários</button></a>
+        
     
     <?php
     if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
@@ -46,6 +48,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 
         <a href="frmCliente.php">
             <button>Cadastre-se</button></a>
+        
 
         <?php
     }
