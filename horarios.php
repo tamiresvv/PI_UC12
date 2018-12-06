@@ -14,8 +14,9 @@
          
       
 
-
+        
         <p style=" color: #eeff00" align="left"> <font size="4" face="Calibri light" >
+            <div align="justify">
         <p> A Clínica Lavinsky Oftalmologia foi fundada por mim em
             1975. Somos referência em atendimento e tratamentos em nossa área 
             de atuação e contamos com um qualificado corpo clínico que possui 
@@ -28,12 +29,8 @@
         <p> Harmonia
             Acreditamos que a harmonia com os membros do corpo clinico, com os colaboradores, bem como com as operadoras e com os fornecedores são fundamentais para entregar ao nosso paciente um atendimento qualificado. </p>
             </font></p>
-
-
-
-
-    
-        
+            </div>
+         }
         
         <br><br><br><br>
         
