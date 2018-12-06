@@ -14,8 +14,8 @@ if( isset($_SESSION['nome']))
 if( isset($_SESSION['foto']))
     unset ($_SESSION['foto']);
 
-if( isset($_SESSION['admin']))
-    unset ($_SESSION['admin']);
+if( isset($_SESSION['tipo']))
+    unset ($_SESSION['tipo']);
 
 session_destroy();
 
