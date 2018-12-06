@@ -1,5 +1,12 @@
 <?php
+session_start();
+if(isset($_SESSION['admin'])&& $_SESSION['admin']){
     
+
+    include_once 'model/clsCidade.php';
+    include_once 'model/clsCliente.php';
+    include_once 'dao/clsConexao.php';
+    include_once 'dao/clsClienteDAO.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,6 +45,7 @@
                 <th>E-mail</th>
                 <th>Cidade</th>
                 <th>Sexo</th>
+                <th>Médico</th>
                 <th><h2>Editar</h2></th>
                 <th><h3>Excluir</h3></th>
             </tr>
@@ -57,6 +65,11 @@
                         else
                             echo '   <td>Masculino</td>';
                         
+                        if( $cli->getMedico() )
+                            echo '   <td>Sim</td>';
+                        else
+                            echo '   <td>Não</td>';
+                        
                         echo '   <td><a href="frmCliente.php?editar&idCliente='.$cli->getId().'" ><button>Editar</button></a></td>';
                         echo '   <td><a href="controller/salvarCliente.php?excluir&idCliente='.$cli->getId().'" ><button>Excluir</button></a></td>';
                         echo '</tr>';
@@ -75,6 +88,11 @@
     </body>
 </html>
 
+<?php
+}else {
+    header("Location: index.php");    
+}
+?>
 
 
 

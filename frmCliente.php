@@ -1,19 +1,20 @@
 <?php
 include_once 'model/clsCidade.php';
-include_once 'dao/clsCidadeDAO.php';
-include_once 'dao/clsConexao.php';
-include_once 'dao/clsClienteDAO.php';
 include_once 'model/clsCliente.php';
+include_once 'dao/clsCidadeDAO.php';
+include_once 'dao/clsClienteDAO.php';
+include_once 'dao/clsConexao.php';
 
 session_start();
 
 $nome = "";
 $telefone = "";
-$cpf = "";
 $email = "";
-$idCidade = 0;
+$cpf = "";
 $sexo = "";
 $admin = 0;
+$medico = 0;
+$idCidade = 0;
 $foto = "sem_foto.png";
 $action = "inserir";
 
@@ -26,90 +27,98 @@ if (isset($_REQUEST['editar'])) {
     $cpf = $cliente->getCpf();
     $sexo = $cliente->getSexo();
     $admin = $cliente->getAdmin();
+    $medico = $cliente->getMedico();
     $foto = $cliente->getFoto();
     $idCidade = $cliente->getCidade()->getId();
-
     $action = "editar&idCliente=" . $cliente->getId();
 }
 ?>
 
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Vision Life - Cadastrar Cliente</title>
+        <title>Market M171 - Cadastrar Cliente</title>
     </head>
     <body>
         <?php
         require_once 'menu.php';
         ?>
+
         <h1 align="center">Cadastrar Cliente</h1>
+
         <br><br><br>
-        <form action="controller/salvarCliente.php?<?php echo $action; ?>" method="POST" enctype="multipart/form-data">
-            <?php
-            if( isset( $_SESSION['admin']) &&  $_SESSION['admin'] ){
-                
-                if( $admin ){
-                    echo '<input type="checkbox" selected name="cbAdmin" />';
-                } else {
-                    echo '<input type="checkbox"  name="cbAdmin" />';
-                    
-                }
-                echo '<label>Admin</label> <br><br>';
-            
-          
-            }
-            ?>
+
+        <form action="controller/salvarCliente.php?<?php echo $action; ?>" method="POST" 
+              enctype="multipart/form-data">
+                  <?php
+                  if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+                      if($admin){
+                          echo '<input type="checkbox" selected name="cbAdmin" />';
+                      }else{
+                          echo '<input type="checkbox" name="cbAdmin" />';
+                      }
+                      echo '<label>Admin</label> <br><br>';
+                      
+                      if($admin){
+                          echo '<input type="checkbox" selected name="cbMedico" />';
+                      }else{
+                          echo '<input type="checkbox" name="cbMedico" />';
+                      }
+                      echo '<label>Médico</label> <br><br>';
+                  }
+                      ?>
+
             <label>Nome: </label>
-            <input type="text" name="txtNome" value="<?php echo $nome; ?>" required maxlength="100"/><br><br>
-
+            <input type="text" name="txtNome" value="<?php echo $nome; ?>" required maxlength="100" /> <br><br>
             <label>Telefone: </label>
-            <input type="text" name="txtTelefone" value="<?php echo $telefone; ?>" maxlength="30"/><br><br>
-
+            <input type="text" name="txtTelefone" value="<?php echo $telefone; ?>" maxlength="30" /> <br><br>
             <label>E-mail: </label>
-            <input type="email" name="txtEmail" value="<?php echo $email; ?>" required /><br><br>
+            <input type="email" name="txtEmail" value="<?php echo $email; ?>" required /> <br><br>
 
             <label>CPF: </label>
-            <input type="text" name="txtCPF" value="<?php echo $cpf; ?>" required /><br><br>
+            <input type="text" name="txtCPF" value="<?php echo $cpf; ?>" required /> <br><br>
 
             <label>Cidade: </label>
-            <select name="cidade">
-                <option value="0">Selecione...</option>
-        <?php
-        $lista = CidadeDAO::getCidades();
-        foreach ($lista as $cid) {
+            <select name="cidade" >
+                <option value="0"  >Selecione...</option>
+                <?php
+                $lista = CidadeDAO::getCidades();
+
+                foreach ($lista as $cid) {
                     $selecionar = "";
                     if ($idCidade == $cid->getId()) {
-                        $selecionar = "selected";
+                        $selecionar = " selected ";
                     }
-                    echo '<option ' . $selecionar . ' value = "' . $cid->getId() . '">'
-                    . $cid->getNome() . '</option>';
+
+                    echo '<option ' . $selecionar . ' value="' . $cid->getId() . '" >' .
+                    $cid->getNome() . '</option>';
                 }
                 ?>
-                </select>
+
+            </select>
 
             <br><br>
-            <label>Sexo: </label><br>
             <?php
             $feminino = "";
             $masculino = "";
-
             if ($sexo == "f") {
-                $feminino = "checked";
+                $feminino = " checked ";
             }
             if ($sexo == "m") {
-                $masculino = "checked";
+                $masculino = " checked ";
             }
             ?>
-            <input type="radio" name="rbSexo" <?php echo $feminino; ?> value="f" required /> Feminino<br>
+
+            <label>Sexo: </label>
+            <input type="radio" name="rbSexo" <?php echo $feminino; ?> value="f" required /> Feminino 
             <input type="radio" name="rbSexo" <?php echo $masculino; ?> value="m" /> Masculino <br><br>
 
             <label>Foto: </label>
 
             <?php
             if (isset($_REQUEST['editar'])) {
-                echo '<img src="fotos_clientes/' . $foto . '"width="30px" />';
+                echo '<img src="fotos_clientes/' . $foto . '" width="30px" />';
             }
             ?>
 
@@ -118,16 +127,19 @@ if (isset($_REQUEST['editar'])) {
             if (!isset($_REQUEST['editar'])) {
                 ?>
                 <label>Senha: </label>
-                <input type="password" name="txtSenha" required maxlength="100"/><br><br>
-
+                <input type="password" name="txtSenha" required maxlength="100"  /> <br><br>
                 <label>Confirme sua Senha: </label>
-                <input type="password" name="txtSenhaConfirma" required maxlength="100"/><br><br>
+                <input type="password" name="txtSenhaConfirma" required maxlength="100" /> <br>
+                <br><br>
                 <?php
             }
-        ?>
-                <input type="submit" value="Salvar"/>
-            <input type="reset" value="Limpar"/>
-        
+            ?>
+            <input type="submit" value="Salvar" />
+            <input type="reset" value="Limpar" />
+
+
         </form>
+
+
     </body>
 </html>
