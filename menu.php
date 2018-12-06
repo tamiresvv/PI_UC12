@@ -21,11 +21,9 @@ if (session_status() != PHP_SESSION_ACTIVE) {
         
     
     <?php
-    if(isset($_SESSION['admin'])&& $_SESSION['admin']){
+    if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
         echo ' <a href="clientes.php">'; 
-        echo ' <button>Clientes</button></a>';
-        echo ' <a href="medicos.php">';
-        echo ' <button>Médicos</button></a>';
+        echo ' <button>Usuários</button></a>';
         echo ' <a href="cidades.php">'; 
         echo ' <button>Cidades</button></a>';  
         

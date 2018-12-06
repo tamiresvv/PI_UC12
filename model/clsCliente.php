@@ -2,11 +2,11 @@
 
 class Cliente {
     private $id, $nome, $telefone, $email, $cpf,
-            $senha, $cidade, $foto, $sexo, $admin, $medico;
+            $senha, $cidade, $foto, $sexo, $tipo;
     
     function __construct($id = NULL, $nome = NULL, $telefone = NULL, 
             $email = NULL, $cpf = NULL, $senha = NULL,  
-            $cidade = NULL, $foto = NULL, $sexo = NULL, $medico = NULL) {
+            $cidade = NULL, $foto = NULL, $sexo = NULL) {
         $this->id = $id;
         $this->nome = $nome;
         $this->telefone = $telefone;
@@ -18,24 +18,14 @@ class Cliente {
         $this->sexo = $sexo;
     }
     
-    function getMedico() {
-        return $this->medico;
+    function getTipo() {
+        return $this->tipo;
     }
 
-    function setMedico($medico) {
-        $this->medico = $medico;
+    function setTipo($tipo) {
+        $this->tipo = $tipo;
     }
-
-        
-    function getAdmin() {
-        return $this->admin;
-    }
-
-    function setAdmin($admin) {
-        $this->admin = $admin;
-    }
-
-        
+       
     function getId() {
         return $this->id;
     }

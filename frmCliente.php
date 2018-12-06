@@ -12,8 +12,7 @@ $telefone = "";
 $email = "";
 $cpf = "";
 $sexo = "";
-$admin = 0;
-$medico = 0;
+$tipo = "";
 $idCidade = 0;
 $foto = "sem_foto.png";
 $action = "inserir";
@@ -26,8 +25,7 @@ if (isset($_REQUEST['editar'])) {
     $email = $cliente->getEmail();
     $cpf = $cliente->getCpf();
     $sexo = $cliente->getSexo();
-    $admin = $cliente->getAdmin();
-    $medico = $cliente->getMedico();
+    $tipo = $cliente->getTipo();
     $foto = $cliente->getFoto();
     $idCidade = $cliente->getCidade()->getId();
     $action = "editar&idCliente=" . $cliente->getId();
@@ -51,21 +49,31 @@ if (isset($_REQUEST['editar'])) {
 
         <form action="controller/salvarCliente.php?<?php echo $action; ?>" method="POST" 
               enctype="multipart/form-data">
+            
                   <?php
-                  if (isset($_SESSION['admin']) && $_SESSION['admin']) {
-                      if($admin){
-                          echo '<input type="checkbox" selected name="cbAdmin" />';
-                      }else{
-                          echo '<input type="checkbox" name="cbAdmin" />';
-                      }
-                      echo '<label>Admin</label> <br><br>';
-                      
-                      if($admin){
-                          echo '<input type="checkbox" selected name="cbMedico" />';
-                      }else{
-                          echo '<input type="checkbox" name="cbMedico" />';
-                      }
-                      echo '<label>Médico</label> <br><br>';
+                  if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == "a") {
+                       $admin = "";                  
+                       $cli = "";                  
+                       $med = "";
+                       ?>            
+                       <label>Tipo: </label>     
+                       <select name="tipo" >
+                       <option value="0"  >Selecione...</option>
+                       <option value="a" <?php echo '$admin' ?> >Admin</option>
+                       <option value="c" <?php echo '$cli' ?> >Cliente</option>
+                       <option value="m" <?php echo '$med' ?> >Medico</option>
+                       <?php
+                       if ($tipo == "a")
+                           $admin = " selected ";
+                       if ($tipo == "c")
+                           $cli = " selected ";
+                       if ($tipo == "m")
+                           $med = " selected ";
+                       
+                       ?>
+                       </select>
+                       <br><br>
+              <?php
                   }
                       ?>
 

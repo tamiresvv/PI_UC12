@@ -6,7 +6,7 @@ class ClienteDAO {
     public static function inserir($cliente){
         $sql = "INSERT INTO clientes "
                 . " ( nome, telefone, cpf, email, senha, "
-                . "   foto, codCidade, sexo, admin, medico ) VALUES "
+                . "   foto, codCidade, sexo, tipo ) VALUES "
                 . " ( '".$cliente->getNome()."' , "
                 . "   '".$cliente->getTelefone()."' , "
                 . "   '".$cliente->getCpf()."' , "
@@ -15,10 +15,9 @@ class ClienteDAO {
                 . "   '".$cliente->getFoto()."' , "
                 . "    ".$cliente->getCidade()->getId()." , "
                 . "   '".$cliente->getSexo()."' , "
-                . "   '".$cliente->getAdmin()."' , "
-                . "   ".$cliente->getMedico()
+                . "   '".$cliente->getTipo()."' "
                 . "  ); ";
-     //   echo $sql;
+        //echo $sql;
         
         Conexao::executar( $sql );
     }
@@ -32,9 +31,8 @@ class ClienteDAO {
                 . " foto  =    '".$cliente->getFoto()."' , "
                 . " codCidade = ".$cliente->getCidade()->getId()." , "
                 . " sexo =     '".$cliente->getSexo()."' , "
-                . " admin =     ".$cliente->getAdmin()."' , "
-                . " medico =     ".$cliente->getMedico()." "
-                . " WHERE id = ".$cliente->getId();
+                . " tipo =     '".$cliente->getTipo()."'   "
+                . " WHERE id =  ".$cliente->getId();
         
         Conexao::executar( $sql );
     }
@@ -49,7 +47,7 @@ class ClienteDAO {
     
     public static function getClientes(){
         $sql = " SELECT c.id, c.nome, c.telefone, c.cpf,"
-             . " c.email, c.foto, d.id, d.nome, c.sexo, c.admin, c.medico "
+             . " c.email, c.foto, d.id, d.nome, c.sexo, c.tipo"
              . " FROM clientes c "
              . " INNER JOIN cidades d "
              . " ON c.codCidade = d.id "
@@ -58,7 +56,7 @@ class ClienteDAO {
         $result = Conexao::consultar($sql);
         $lista = new ArrayObject();
         while( list( $cod, $nome, $fone, $cpf, $mail,
-            $foto, $codCid, $nomeCid, $sexo, $admin, $medico) = mysqli_fetch_row($result) ){
+            $foto, $codCid, $nomeCid, $sexo, $tipo) = mysqli_fetch_row($result) ){
             $cidade = new Cidade();
             $cidade->setId( $codCid );
             $cidade->setNome( $nomeCid );
@@ -71,8 +69,7 @@ class ClienteDAO {
             $cliente->setFoto($foto);
             $cliente->setCidade($cidade);
             $cliente->setSexo($sexo);
-            $cliente->setAdmin($admin);
-            $cliente->setMedico($medico);
+            $cliente->setTipo($tipo);
   
             $lista->append($cliente);
         }
@@ -83,7 +80,7 @@ class ClienteDAO {
     
    public static function getClienteById( $id ){
         $sql = " SELECT c.id, c.nome, c.telefone, c.cpf,"
-             . " c.email, c.foto, d.id, d.nome, c.sexo, c.admin, c.medico "
+             . " c.email, c.foto, d.id, d.nome, c.sexo, c.tipo"
              . " FROM clientes c "
              . " INNER JOIN cidades d "
              . " ON c.codCidade = d.id "
@@ -93,7 +90,7 @@ class ClienteDAO {
         $result = Conexao::consultar($sql);
       
         list( $cod, $nome, $fone, $cpf, $mail,
-            $foto, $codCid, $nomeCid, $sexo, $admin, $medico) = mysqli_fetch_row($result);
+            $foto, $codCid, $nomeCid, $sexo, $tipo) = mysqli_fetch_row($result);
             $cidade = new Cidade();
             $cidade->setId( $codCid );
             $cidade->setNome( $nomeCid );
@@ -106,15 +103,14 @@ class ClienteDAO {
             $cliente->setFoto($foto);
             $cliente->setCidade($cidade);
             $cliente->setSexo($sexo);
-            $cliente->setAdmin($admin);
-            $cliente->setMedico($medico);
+            $cliente->setTipo($tipo);
   
             
         return $cliente;
     }
   
     public static function logar($login, $senha){
-        $sql = " SELECT id, nome, foto, admin, medico "
+        $sql = " SELECT id, nome, foto, tipo "
              . " FROM clientes "
              . " WHERE ( email = '".$login."' OR "
              . "           CPF = '".$login."' )  "
@@ -127,8 +123,7 @@ class ClienteDAO {
             $cliente->setId( $dados['id'] );
             $cliente->setNome( $dados['nome'] );
             $cliente->setFoto( $dados['foto'] );
-            $cliente->setAdmin( $dados['admin'] );
-            $cliente->setMedico( $dados['medico'] );
+            $cliente->setTipo( $dados['tipo'] );
             return $cliente;
         } else {
             return NULL;
