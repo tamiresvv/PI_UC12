@@ -8,7 +8,7 @@
  * @author 181700008
  */
 class Consulta {
-    private $id, $Cliente, $medico, $horario, $valor;
+    private $id, $cliente, $medico, $horario, $valor;
     
     function __construct($id, $cliente, $medico, $horario, $valor) {
         $this->id = $id;
