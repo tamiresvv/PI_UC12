@@ -10,9 +10,42 @@
         <?php
             require_once 'menu.php';
         ?>
+        <?php
+        {
+ $col = 0;
+
+function SetCol($col)
+{
+    // Mudar de coluna
+    $this->col = $col;
+    $x = 10+$col*65;
+    $this->SetLeftMargin($x);
+    $this->SetX($x);
+}
+
+function AcceptPageBreak()
+{
+    //esquema de 3 colunas
+    if($this->col<2)
+    {
+        // Avança para a próxima coluna
+        $this->SetCol($this->col+1);
+        $this->SetY(10);
+        return false; //Não quebra a página
+    }
+    else
+    {
+        // Volta para a primeira coluna e quebra a página
+        $this->SetCol(0);
+        return true;
+    }
+}
+}
+
+        ?>
         <h1 align="center">Clinica Oftalmologica VisionLife </h1>
-         
-      
+        
+        
 
         
         <p style=" color: #eeff00" align="left"> <font size="4" face="Calibri light" >
