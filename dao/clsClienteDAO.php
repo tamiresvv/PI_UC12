@@ -51,6 +51,7 @@ class ClienteDAO {
              . " FROM clientes c "
              . " INNER JOIN cidades d "
              . " ON c.codCidade = d.id "
+             . " WHERE c.tipo = 'c' "
              . " ORDER BY c.nome ";
         
         $result = Conexao::consultar($sql);
