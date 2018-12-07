@@ -36,7 +36,7 @@ if (isset($_REQUEST['editar'])) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Market M171 - Cadastrar Cliente</title>
+        <title>Vision Life - Cadastrar Clientes</title>
     </head>
     <body>
         <?php

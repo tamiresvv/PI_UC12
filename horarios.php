@@ -10,9 +10,10 @@
         <?php
             require_once 'menu.php';
         ?>
+        
         <h1 align="center">Clinica Oftalmologica VisionLife </h1>
-         
-      
+        
+        
 
         
         <p style=" color: #eeff00" align="left"> <font size="4" face="Calibri light" >

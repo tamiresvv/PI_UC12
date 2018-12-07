@@ -8,12 +8,12 @@
  * @author 181700008
  */
 class Consulta {
-    private $id, $codCliente, $codMedico, $horario, $valor;
+    private $id, $cliente, $medico, $horario, $valor;
     
-    function __construct($id, $codCliente, $codMedico, $horario, $valor) {
+    function __construct($id, $cliente, $medico, $horario, $valor) {
         $this->id = $id;
-        $this->codCliente = $codCliente;
-        $this->codMedico = $codMedico;
+        $this->cliente = $cliente;
+        $this->medico = $medico;
         $this->horario = $horario;
         $this->valor = $valor;
     }
@@ -21,12 +21,12 @@ class Consulta {
         return $this->id;
     }
 
-    function getCodCliente() {
-        return $this->codCliente;
+    function getCliente() {
+        return $this->cliente;
     }
 
-    function getCodMedico() {
-        return $this->codMedico;
+    function getMedico() {
+        return $this->medico;
     }
 
     function getHorario() {
@@ -41,12 +41,12 @@ class Consulta {
         $this->id = $id;
     }
 
-    function setCodCliente($codCliente) {
-        $this->codCliente = $codCliente;
+    function setCliente($cliente) {
+        $this->cliente = $cliente;
     }
 
-    function setCodMedico($codMedico) {
-        $this->codMedico = $codMedico;
+    function setMedico($medico) {
+        $this->medico = $medico;
     }
 
     function setHorario($horario) {
