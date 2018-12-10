@@ -1,8 +1,9 @@
 <?php
-    //include_once 'model/cls';
-    //include_once 'model/clsConsulta.php';
-   // include_once 'dao/clsConexao.php';
-   // include_once 'dao/clsConsultaDAO.php';
+    include_once 'dao/clsClienteDAO.php';
+    include_once 'model/clsConsulta.php';
+    include_once 'model/clsCliente.php';
+    include_once 'dao/clsConexao.php';
+    include_once 'dao/clsConsultaDAO.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,13 +19,13 @@
         <h1 align="center">Consultas</h1>
         
         <br><br><br>
-        
+          <a href="frmConsulta.php">
+                    <button>Marcar nova Consulta</button></a>
+                <br><br>
         <?php
             if( isset( $_SESSION['admin']) && $_SESSION['admin'] ){
         ?>
-                <a href="frmConsulta.php">
-                    <button>Marcar nova Consulta</button></a>
-                <br><br>
+              
         <?php
             }
             
@@ -50,7 +51,8 @@
                     foreach ($lista as $con){
                         echo '<tr> ';
                         echo '   <td>'.$con->getId().'</td>';
-                        echo '   <td>'.$con->getNome().'</td>';
+                        echo '   <td>'.$con->getCliente()->getNome().'</td>';
+                        echo '   <td>'.$con->getMedico()->getNome().'</td>';
                         
                         $valor = str_replace(".", ",",$con->getValor() );
                         echo '   <td>R$ '.$valor.'</td>';
@@ -58,15 +60,11 @@
                         $hor = str_replace(".", ",",$con->getHorario() );
                         echo '   <td>'.$hor.'</td>';
                         
-                        echo '   <td>'.$con->getTipo().'</td>';
                         
-                        $desabilita = "";
-                        if( !isset( $_SESSION['admin']) || !$_SESSION['admin']  ){
-                            $desabilita = " disabled ";
-                        }
+                      
                         
-                        echo '   <td><a href="frmConsulta.php?editar&idConsulta='.$con->getId().'" ><button '.$desabilita.' >Editar</button></a></td>';
-                        echo '   <td><a href="controller/salvarConsulta.php?excluir&idConsulta='.$con->getId().'" ><button '.$desabilita.' >Excluir</button></a></td>';
+                        echo '   <td><a href="frmConsulta.php?editar&idConsulta='.$con->getId().'" ><button  >Remarcar</button></a></td>';
+                        echo '   <td><a href="controller/salvarConsulta.php?excluir&idConsulta='.$con->getId().'" ><button  >Cancelar</button></a></td>';
                         echo '</tr>';
                         
                     }

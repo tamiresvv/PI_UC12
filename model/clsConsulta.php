@@ -10,7 +10,7 @@
 class Consulta {
     private $id, $cliente, $medico, $horario, $valor;
     
-    function __construct($id, $cliente, $medico, $horario, $valor) {
+    function __construct($id = NULL, $cliente = NULL, $medico = NULL, $horario = NULL, $valor = NULL) {
         $this->id = $id;
         $this->cliente = $cliente;
         $this->medico = $medico;

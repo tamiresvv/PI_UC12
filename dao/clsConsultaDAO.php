@@ -33,11 +33,12 @@ class ConsultaDAO {
     }
     
     public static function getConsultas(){
-        $sql = " SELECT c.id, c.horario, c.valor, p.id, p.nome, m.id, m.nome,  "
+        $sql = " SELECT c.id, DATE_FORMAT(c.horario,'%d/%m/%Y %H:%i'), c.valor, p.id, p.nome, m.id, m.nome  "
              . " FROM consultas c "
              . " INNER JOIN clientes p ON p.id = c.codCliente "
              . " INNER JOIN clientes m ON m.id = c.codMedico  "
-             . " ORDER BY c.horário DESC";
+             . " ORDER BY c.horario DESC ";
+
         
         $result = Conexao::consultar($sql);
         $lista = new ArrayObject();
