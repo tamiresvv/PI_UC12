@@ -1,12 +1,5 @@
 <?php
 
-
-
-/**
- * Description of clsConsulta
- *
- * @author 181700008
- */
 class Consulta {
     private $id, $cliente, $medico, $horario, $valor;
     

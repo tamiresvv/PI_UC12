@@ -26,6 +26,8 @@ if (session_status() != PHP_SESSION_ACTIVE) {
         echo ' <button>Usuários</button></a>';
         echo ' <a href="cidades.php">'; 
         echo ' <button>Cidades</button></a>';  
+        echo ' <a href="procedimentos.php">'; 
+        echo ' <button>Procedimentos</button></a>';  
         
     }
                 ?>
