@@ -7,9 +7,8 @@ include_once 'dao/clsConexao.php';
 
 session_start();
 
-$medico = "";
+$idMedico = 0;
 $horario = "";
-$valor = "";
 $action = "inserir";
 
 if (isset($_REQUEST['editar'])) {
@@ -17,7 +16,6 @@ if (isset($_REQUEST['editar'])) {
     $consulta = ConsultaDAO::getConsultaById($id);
     $medico = $consulta->getMedico();
     $horario = $consulta->getHorario();
-    $valor = $consulta->getValor();
     
     $action = "editar&idConsulta=" . $consulta->getId();
 }
@@ -41,27 +39,79 @@ if (isset($_REQUEST['editar'])) {
               enctype="multipart/form-data">
             
            
+            <label>Data: </label>
+            <input type="datetime" name="txtData" value="<?php echo $data; ?>" /><br><br>
             <label>Horario: </label>
-            <input type="datetime" name="txtHorario" value="<?php echo $horario; ?>" maxlength="30" /> <br><br>
-            <label>Valor: </label>
+                <select name="horario">
+                    <option value="0"  >Selecione...</option>
+                    <?php
+                    foreach ($listaHor as $hor) {
+                    $selecionar = "";
+                    
+                    if ($idHorario == $hor->getId()) {
+                        $selecionar = " selected ";
+                    }
+
+                    echo '<option ' . $selecionar . ' value="' . $hor->getId() . '" >' .
+                    $hor->getNome() . '</option>';
+                    
+                }
+                    
+                    ?>
+                    
+                </select>
+            <br><br>
             
+            <label>Procedimento: </label>
+            <?php
+            //   $lista = ProcedimentoDAO::getProcedimentos();
+             $listaMed = ClienteDAO::getMedicos();
+             
+             
+                
+            
+            ?>
+            <select name="procedimento">
+               <option value="0"  >Selecione...</option>
+               <?php
+            
+               foreach ($lista as $proced) {
+                    $selecionar = "";
+                    if ($proced->getId() == $proced->getId()) {
+                        $selecionar = " selected ";
+                    }
+
+                    echo '<option ' . $selecionar . ' value="' . $proced->getId() . '" >' .
+                    $proced->getNome() . '</option>';
+                    
+                }
+               ?>
+               
+            </select>
+            
+            <br><br>
             
             <label>Medico: </label>
             <select name="medico" >
                 <option value="0"  >Selecione...</option>
                 <?php
-                $lista = ClienteDAO::getMedicos();
-
-                foreach ($lista as $med) {
+                foreach ($listaMed as $med) {
                     $selecionar = "";
-                    if ($medico->getId() == $med->getId()) {
+                    
+                    if ($idMedico == $med->getId()) {
                         $selecionar = " selected ";
                     }
 
                     echo '<option ' . $selecionar . ' value="' . $med->getId() . '" >' .
                     $med->getNome() . '</option>';
+                    
                 }
+                
                 ?>
+                
+                </select>
+            <br><br>
+            
                 <input type="submit" value="Salvar" />
             <input type="reset" value="Limpar" />
 
