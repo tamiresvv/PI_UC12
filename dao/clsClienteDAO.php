@@ -87,7 +87,7 @@ class ClienteDAO {
              . " ON c.codCidade = d.id "
              . " WHERE c.tipo = 'm' "
              . " ORDER BY c.nome ";
-        
+            
         $result = Conexao::consultar($sql);
         $lista = new ArrayObject();
         while( list( $cod, $nome, $fone, $cpf, $mail,
