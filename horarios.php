@@ -18,7 +18,7 @@
         
         <p style=" color: #eeff00" align="left"> <font size="4" face="Calibri light" >
         <div style="text-align: justify;">
-            <p> A Clínica Lavinsky Oftalmologia foi fundada por mim em 
+            <p> A Clínica Vision Life Oftalmologia foi fundada em 
             1975. Somos referência em atendimento e tratamentos em nossa área 
             de atuação e contamos com um qualificado corpo clínico que possui 
             credenciais assistenciais e acadêmicas, além de reconhecimento nacional e internacional. </p>
