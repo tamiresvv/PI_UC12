@@ -5,9 +5,14 @@
         <group>
             <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/model/clsCliente.php</file>
             <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/clientes.php</file>
-            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/model/clsConsulta.php</file>
-            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/horarios.php</file>
             <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/consultas.php</file>
+            <file>file:/C:/xampp/htdocs/m171/Projeto/PI_UC12/controller/salvarCliente.php</file>
+            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/model/clsConsulta.php</file>
+            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/clientes.php</file>
+            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/horarios.php</file>
+            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/frmConsulta.php</file>
+            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/frmCliente.php</file>
+            <file>file:/C:/xampp/htdocs/M171/Projeto/PI_UC12/dao/clsClienteDAO.php</file>
         </group>
     </open-files>
 </project-private>

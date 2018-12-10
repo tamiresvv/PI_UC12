@@ -51,6 +51,7 @@ class ClienteDAO {
              . " FROM clientes c "
              . " INNER JOIN cidades d "
              . " ON c.codCidade = d.id "
+             . " WHERE c.tipo = 'c' "
              . " ORDER BY c.nome ";
         
         $result = Conexao::consultar($sql);
@@ -77,6 +78,39 @@ class ClienteDAO {
         return $lista;
     }
     
+    
+    public static function getMedicos(){
+        $sql = " SELECT c.id, c.nome, c.telefone, c.cpf,"
+             . " c.email, c.foto, d.id, d.nome, c.sexo, c.tipo"
+             . " FROM clientes c "
+             . " INNER JOIN cidades d "
+             . " ON c.codCidade = d.id "
+             . " WHERE c.tipo = 'm' "
+             . " ORDER BY c.nome ";
+        
+        $result = Conexao::consultar($sql);
+        $lista = new ArrayObject();
+        while( list( $cod, $nome, $fone, $cpf, $mail,
+            $foto, $codCid, $nomeCid, $sexo, $tipo) = mysqli_fetch_row($result) ){
+            $cidade = new Cidade();
+            $cidade->setId( $codCid );
+            $cidade->setNome( $nomeCid );
+            $cliente = new Cliente();
+            $cliente->setId($cod);
+            $cliente->setNome($nome);
+            $cliente->setTelefone($fone);
+            $cliente->setEmail($mail);
+            $cliente->setCpf($cpf);
+            $cliente->setFoto($foto);
+            $cliente->setCidade($cidade);
+            $cliente->setSexo($sexo);
+            $cliente->setTipo($tipo);
+  
+            $lista->append($cliente);
+        }
+        
+        return $lista;
+    }
     
    public static function getClienteById( $id ){
         $sql = " SELECT c.id, c.nome, c.telefone, c.cpf,"
