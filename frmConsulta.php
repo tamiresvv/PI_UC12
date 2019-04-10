@@ -10,7 +10,7 @@ session_start();
 $idMedico = 0;
 $horario = "";
 $action = "inserir";
-
+$data = "";
 if (isset($_REQUEST['editar'])) {
     $id = $_REQUEST['idConsulta'];
     $consulta = ConsultaDAO::getConsultaById($id);
