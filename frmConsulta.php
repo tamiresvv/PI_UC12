@@ -2,9 +2,11 @@
 include_once 'model/clsCidade.php';
 include_once 'model/clsCliente.php';
 include_once 'model/clsProcedimento.php';
+include_once 'model/clsHorario.php';
 include_once 'dao/clsCidadeDAO.php';
 include_once 'dao/clsClienteDAO.php';
 include_once 'dao/clsProcedimentoDAO.php';
+include_once 'dao/clsHorarioDAO.php';
 include_once 'dao/clsConexao.php';
 
 session_start();
@@ -50,6 +52,7 @@ if (isset($_REQUEST['editar'])) {
                 <select name="horario">
                     <option value="0"  >Selecione...</option>
                     <?php
+                    $listaHor = HorarioDAO::getHorarios();
                     foreach ($listaHor as $hor) {
                     $selecionar = "";
                     
@@ -58,7 +61,7 @@ if (isset($_REQUEST['editar'])) {
                     }
 
                     echo '<option ' . $selecionar . ' value="' . $hor->getId() . '" >' .
-                    $hor->getNome() . '</option>';
+                    $hor->getHora() . '</option>';
                     
                 }
                     
