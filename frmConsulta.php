@@ -65,7 +65,7 @@ if (isset($_REQUEST['editar'])) {
             <label>Procedimento: </label>
             <?php
             //   $lista = ProcedimentoDAO::getProcedimentos();
-             $listaMed = ClienteDAO::getMedicos();
+//             $listaMed = ClienteDAO::getMedicos();
              
              
                 

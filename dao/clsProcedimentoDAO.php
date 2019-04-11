@@ -3,15 +3,15 @@
 class ProcedimentoDAO {
     public static function inserir( $procedimento ){
         $sql = "INSERT INTO procedimentos ( nome, valor ) VALUES "
-                . " ( '".$procedimento->getNome()."' ); "
-                . " (  ".$procedimento->getValor()." ); ";
+                . " ( '".$procedimento->getNome()."' , "
+                . "   ".$procedimento->getValor()." ); ";
         Conexao::executar($sql);
         
     }
     
     public static function editar( $procedimento ){
         $sql =    "UPDATE procedimentos SET "
-                . " nome = '".$procedimento->getNome()."' "
+                . " nome = '".$procedimento->getNome()."' , "
                 . " valor = ".$procedimento->getValor()." "
                 . " WHERE id = ".$procedimento->getId();
         Conexao::executar($sql);
