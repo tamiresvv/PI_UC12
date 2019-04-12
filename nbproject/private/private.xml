@@ -3,20 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarProcedimento.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/procedimentos.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/horarioConsulta.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/model/clsCidade.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCidade.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsHorarioDAO.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarConsulta.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarHorario.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsProcedimentoDAO.php</file>
-=======
-            <file>file:/C:/xampp/htdocs/PI_UC12/frmConsulta.php</file>
-<<<<<<< HEAD
-            <file>file:/C:/xampp/htdocs/PI_UC12/frmCliente.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsClienteDAO.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCliente.php</file>
-=======
-            <file>file:/C:/xampp/htdocs/PI_UC12/entrar.php</file>
->>>>>>> 733d9346bd09be28bd12426ec1959681cba2d068
->>>>>>> 206251b9374d2d6cf687d1bbc5fbd0e3d4ea9cdc
+            <file>file:/C:/xampp/htdocs/PI_UC12/cidades.php</file>
         </group>
     </open-files>
 </project-private>

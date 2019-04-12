@@ -28,3 +28,16 @@ if( isset( $_REQUEST['confirmaExcluir'] ) ){
     CidadeDAO::excluir($id);
     header("Location: ../cidades.php");
 }
+if( isset( $_REQUEST['editar'] ) ){
+    $id = $_REQUEST['idCidade'];
+    
+    
+    $cidade = new Cidade();
+    $cidade->setId($id);
+    $cidade->setNome($_POST['txtNome']);
+    
+   
+    
+    CidadeDAO::editar($cidade);
+    header("Location: ../cidades.php");
+}

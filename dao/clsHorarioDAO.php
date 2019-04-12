@@ -38,6 +38,19 @@ class HorarioDAO {
         }
         return $lista;
     }
+    public static function getHorariosById( $id ){
+        $sql = " SELECT h.id, h.horarios"
+             . " FROM horarios h "
+             . " WHERE h.id = ".$id 
+             . " ORDER BY h.horarios ";
+        $result = Conexao::consultar($sql);
+        list($_id, $_horarios) = mysqli_fetch_row($result);{
+                $horarios = new Horario();
+                $horarios->setId($_id);
+                $horarios->setHora($_horarios);
+        }        
+        return $horarios;
+    }
     
     
 }

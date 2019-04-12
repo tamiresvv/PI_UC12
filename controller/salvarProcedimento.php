@@ -36,8 +36,6 @@ if( isset( $_REQUEST['confirmaExcluir'] ) ){
 
 
 
-<<<<<<< HEAD
-=======
 if( isset( $_REQUEST['editar'] ) ){
     $id = $_REQUEST['idProcedimento'];
     
@@ -54,4 +52,3 @@ if( isset( $_REQUEST['editar'] ) ){
     header("Location: ../procedimentos.php");
 }
 
->>>>>>> 206251b9374d2d6cf687d1bbc5fbd0e3d4ea9cdc
