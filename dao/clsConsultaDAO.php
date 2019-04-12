@@ -9,6 +9,7 @@ class ConsultaDAO {
              . $consulta->getCliente()->getId()      . " , "
              . $consulta->getMedico()->getId()       . " , "
              . $consulta->getValor()                 . " , "
+             . $consulta->getData()                  . "  , "
              . $consulta->getHorario()               . "  ) ";
         
         Conexao::executar($sql);
@@ -20,6 +21,7 @@ class ConsultaDAO {
                 . " cliente =        '".$consulta->getMedico()->getId()."' , "
                 . " valor =          '".$consulta->getValor()."' , "
                 . " horario =        '".$consulta->getHorario()
+                . " data =           '".$consulta->getData()
                 . " WHERE id =        ".$consulta->getId();
         
         Conexao::executar( $sql );
