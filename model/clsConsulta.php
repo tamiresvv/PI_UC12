@@ -1,14 +1,15 @@
 <?php
 
 class Consulta {
-    private $id, $cliente, $medico, $horario, $valor;
+    private $id, $cliente, $medico, $horario, $valor, $data;
     
-    function __construct($id = NULL, $cliente = NULL, $medico = NULL, $horario = NULL, $valor = NULL) {
+    function __construct($id = NULL, $cliente = NULL, $medico = NULL, $horario = NULL, $valor = NULL, $data = NULL) {
         $this->id = $id;
         $this->cliente = $cliente;
         $this->medico = $medico;
         $this->horario = $horario;
         $this->valor = $valor;
+        $this->data = $data;
     }
     function getId() {
         return $this->id;
@@ -24,6 +25,9 @@ class Consulta {
 
     function getHorario() {
         return $this->horario;
+    }
+    function getData() {
+        return $this->data;
     }
 
     function getValor() {
@@ -48,6 +52,9 @@ class Consulta {
 
     function setValor($valor) {
         $this->valor = $valor;
+    }
+    function setData($data) {
+        $this->data = $data;
     }
 
 

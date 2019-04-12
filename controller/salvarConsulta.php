@@ -4,20 +4,23 @@ include_once '../model/clsCliente.php';
 include_once '../dao/clsConsultaDAO.php';
 include_once '../dao/clsClienteDAO.php';
 include_once '../dao/clsConexao.php';
+session_start();
 
 if( isset($_REQUEST['inserir'])  ){
     
         $consulta= new Consulta();
         $cliente = new Cliente();
-        $cliente ->setId($id);
-        $cliente->setNome( $_POST['txtNome'] );
+        $cliente->setId($_SESSION['idCliente']);
+        $cliente->setNome( $_SESSION['nome'] );
         $consulta->setCliente($cliente);
-        $consulta = $_POST['txtValor'];
-        $consulta = str_replace(",", ".", $valor);
-        $consulta->setPreco( $valor );
-        $hor = $_POST['txtHorario'];
-        $hor = str_replace(",", ".", $hor);
-        $consulta->setHorario( $hor );
+        
+        $valor = $_POST['txtValor'];
+        $valor = str_replace(",", ".", $valor);
+        $consulta->setValor( $valor );
+        
+        $horario = new Horario();
+        $horario->setId( $_POST['horario']  );
+        $consulta->setHorario( $horario );
    
         
         $medico = new medico();
