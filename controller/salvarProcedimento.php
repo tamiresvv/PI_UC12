@@ -27,10 +27,28 @@ if( isset($_REQUEST['excluir'])){
     echo '<a href="../cidades.php" ><button>NÃO</button></a>';
 }
 
+
 if( isset( $_REQUEST['confirmaExcluir'] ) ){
     $id = $_REQUEST['idProcedimento'];
     ProcedimentoDAO::excluir($id);
     header("Location: ../procedimentos.php");
 }
 
+
+
+if( isset( $_REQUEST['editar'] ) ){
+    $id = $_REQUEST['idProcedimento'];
+    
+    
+    $procedimento = new Procedimento();
+    $procedimento->setId($id);
+    $procedimento->setNome($_POST['txtNome']);
+    $valor = $_POST['txtValor'];
+    $valor = str_replace(",", ".", $valor);
+    $procedimento->setValor($valor);
+    
+    
+    ProcedimentoDAO::editar($procedimento);
+    header("Location: ../procedimentos.php");
+}
 
