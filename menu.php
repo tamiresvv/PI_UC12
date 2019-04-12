@@ -28,6 +28,8 @@ if (session_status() != PHP_SESSION_ACTIVE) {
         echo ' <button>Cidades</button></a>';  
         echo ' <a href="procedimentos.php">'; 
         echo ' <button>Procedimentos</button></a>';  
+        echo ' <a href="horarioConsulta.php">'; 
+        echo ' <button>Horários</button></a>';  
         
     }
                 ?>
