@@ -40,4 +40,18 @@ class ProcedimentoDAO {
         }
         return $lista;
     }
+    public static function getProcedimentoById( $id ){
+        $sql = " SELECT p.id, p.nome, p.valor"
+             . " FROM procedimentos p "
+             . " WHERE p.id = ".$id 
+             . " ORDER BY p.nome ";
+        $result = Conexao::consultar($sql);
+        list($_id, $_nome, $_valor) = mysqli_fetch_row($result);{
+                $procedimento = new Procedimento();
+                $procedimento->setId($_id);
+                $procedimento->setNome($_nome);
+                $procedimento->setValor($_valor);
+        }        
+        return $procedimento;
+    }
 }
