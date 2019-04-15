@@ -44,6 +44,19 @@ class CidadeDAO {
         }
         return $lista;
     }
+    public static function getCidadeById( $id ){
+        $sql = " SELECT c.id, c.nome"
+             . " FROM cidades c "
+             . " WHERE c.id = ".$id 
+             . " ORDER BY c.nome ";
+        $result = Conexao::consultar($sql);
+        list($_id, $_nome) = mysqli_fetch_row($result);{
+                $cidade = new Cidade();
+                $cidade->setId($_id);
+                $cidade->setNome($_nome);
+        }        
+        return $cidade;
+    }
     
     
 }
