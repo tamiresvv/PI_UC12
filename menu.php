@@ -6,20 +6,15 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 <header>
     <a href="index.php">
         <button>Início</button></a>
-    
     <a href="horarios.php">
         <button>Sobre</button></a>
-
 
     <?php
     if (isset($_SESSION['logado']) &&
             $_SESSION['logado'] == TRUE) {
         ?>
-        
         <a href="consultas.php">
-            <button>Consultas</button></a>
-        
-    
+            <button>Consultas</button></a>  
     <?php
     if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
         echo ' <a href="clientes.php">'; 
@@ -29,8 +24,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
         echo ' <a href="procedimentos.php">'; 
         echo ' <button>Procedimentos</button></a>';  
         echo ' <a href="horarioConsulta.php">'; 
-        echo ' <button>Horários</button></a>';  
-        
+        echo ' <button>Horários</button></a>';        
     }
                 ?>
         
