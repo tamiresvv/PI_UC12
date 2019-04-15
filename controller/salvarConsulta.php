@@ -8,7 +8,10 @@ include_once '../dao/clsConexao.php';
 if( isset($_REQUEST['inserir'])  ){
     
         $consulta= new Consulta();
-        $consulta->setNome( $_POST['txtNome'] );
+        $cliente = new Cliente();
+        $cliente ->setId($id);
+        $cliente->setNome( $_POST['txtNome'] );
+        $consulta->setCliente($cliente);
         $consulta = $_POST['txtValor'];
         $consulta = str_replace(",", ".", $valor);
         $consulta->setPreco( $valor );
