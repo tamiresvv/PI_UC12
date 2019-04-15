@@ -4,6 +4,7 @@ include_once '../dao/clsHorarioDAO.php';
 include_once '../dao/clsConexao.php';
 
 
+
 if( isset( $_REQUEST['inserir'] ) ){
     $horario = new Horario();
     $horario->setHora( $_POST['txtHora']  );
