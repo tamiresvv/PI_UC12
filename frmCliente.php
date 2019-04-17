@@ -37,6 +37,8 @@ if (isset($_REQUEST['editar'])) {
     <head>
         <meta charset="UTF-8">
         <title>Vision Life - Cadastrar Clientes</title>
+        <link href="estilo.css" rel="stylesheet" type="text/css"/>
+        
     </head>
     <body>
         <?php
