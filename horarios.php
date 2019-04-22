@@ -2,7 +2,7 @@
 <html>
     
     <head>
-               <title>Bem Vindos a tlcas oft </title>
+               <title>Bem Vindos a Vision Life </title>
                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         </head>
     <body>
@@ -12,12 +12,9 @@
         ?>
         
         <h1 align="center">Clinica Oftalmologica VisionLife </h1>
-        
-        
-
-        
-        <p style=" color: #eeff00" align="left"> <font size="4" face="Calibri light" >
-        <div style="text-align: justify;">
+        <link href="estilo.css" rel="stylesheet" type="text/css"/>
+        <div id="container">
+            <br><br>
             <p> A Clínica Vision Life Oftalmologia foi fundada em 
             1975. Somos referência em atendimento e tratamentos em nossa área 
             de atuação e contamos com um qualificado corpo clínico que possui 
@@ -45,17 +42,17 @@
             <p>Acreditamos que a harmonia com os membros do corpo clinico, com os
             colaboradores, bem como com as operadoras e com os fornecedores são fundamentais
             para entregar ao nosso paciente um atendimento qualificado. </p>
-        </div>
+       
         
             </font> 
             </p>
            
-         
+          </div>
         
         <br><br>
         
-        <p style=" color: #eeff00" align="left"> <font size="4" face="Calibri light" >
         
+        <div id="container2">
         <h3 align="left">HORARIOS DE FUNCIONAMENTO: </h3>             
         
             <?php
@@ -87,5 +84,6 @@
         ?>
         </font> 
             </p>
+            </div>
     </body>
 </html>

@@ -4,6 +4,8 @@
         <group>
 
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarProcedimento.php</file>
+
+            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCliente.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/horarioConsulta.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/model/clsCidade.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCidade.php</file>
