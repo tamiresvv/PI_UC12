@@ -4,36 +4,17 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 }
 ?>
 <header>
-    <a href="index.php">
-        <button>Início</button></a>
-    <a href="horarios.php">
-        <button>Sobre</button></a>
-
+    <div id="menu">
+    <a href="index.php">Início</a>
+    <a href="horarios.php">Sobre</a>
+    
     <?php
-    if (isset($_SESSION['logado']) &&
-            $_SESSION['logado'] == TRUE) {
+    if (!isset($_SESSION['logado']) ||
+            !$_SESSION['logado'] ) {
         ?>
-        <a href="consultas.php">
-            <button>Consultas</button></a>  
-    <?php
-    if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
-        echo ' <a href="clientes.php">'; 
-        echo ' <button>Usuários</button></a>';
-        echo ' <a href="cidades.php">'; 
-        echo ' <button>Cidades</button></a>';  
-        echo ' <a href="procedimentos.php">'; 
-        echo ' <button>Procedimentos</button></a>';  
-        echo ' <a href="horarioConsulta.php">'; 
-        echo ' <button>Horários</button></a>';        
-    }
-                ?>
+     <a href="frmCliente.php">Cadastre-se</a>
+    |      
         
-        <?php
-        echo 'Olá, ' . $_SESSION['nome'];
-        echo '<a href="sair.php"><button>Sair</button></a>';
-    } else {
-        ?>
-        | 
         <form action="entrar.php" method="POST" >
             <input type="text" name="txtLogin" required
                    placeholder="E-mail ou CPF: " />
@@ -43,15 +24,31 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 
             <input type="submit" value="Entrar" />
         </form> 
-
-        <a href="frmCliente.php">
-            <button>Cadastre-se</button></a>
+    
+    <?php
+            }else{
+                ?>
+    
+        <a href="consultas.php">Consultas</button</a>  
+    <?php
+    if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
+        echo ' <a href="clientes.php">Usuários</a>';
+        echo ' <a href="cidades.php">Cidades</a>';  
+        echo ' <a href="procedimentos.php">Procedimentos</a>';  
+        echo ' <a href="horarioConsulta.php">Horários</a>'; 
         
-
-        <?php
     }
-    ?>
-
+                ?>
+        
+        <?php
+        echo 'Olá, ' . $_SESSION['nome'];
+        echo '<a href="sair.php">Sair</a>';
+        
+    } 
+        ?>
+   
+        
+    </div>
 </header>
 
-<hr>
+

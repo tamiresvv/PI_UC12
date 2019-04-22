@@ -1,5 +1,54 @@
 body{
-    background-image: linear-gradient( #87CEEB, white);
+    background-color: #DBF5F7;
     background-repeat: no-repeat;
+    font-family: "Calibri Light";
+    color: #122E30;
+    margin: 0; padding: 0;
+}
+#menu{
+    color: white;
+    width: 100%;
+    height: 40px;
+    background-color: #79CDCD;
+    /*display: inline-block;*/
+    border-bottom: 1px solid #528B8B;
+    padding-bottom: 5px;
+    padding-top: 20px;
+    padding-left: 15px;
+    font-family: "Calibri";
+    
+}
+#menu a{
+    background-color: #AEEEEE;
+    color: white;
+    text-decoration: none;
+    margin: 0px 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: "Calibri";
+    float: left;
+}
+#menu a:hover{
+    background-color: #CFCFCF;
+}
+
+#container{
+    margin: 15px;
+}
+#container2{
+    margin: 15px;
+}
+
+#login{
+    background-repeat: no-repeat;
+    padding: 12px 45px;
+    margin: 0px 0px 0px 350px;
+    border-radius: 7px;
+    background-position: left;
+    font-size: 11px;
+    width: 100px;
+    transition: width 1s;
+    -webkit-transition: width 1s;                    
+    
 }
 
