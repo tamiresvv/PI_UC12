@@ -4,53 +4,21 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarProcedimento.php</file>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            <file>file:/C:/xampp/htdocs/PI_UC12/horarioConsulta.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/model/clsCidade.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCidade.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsHorarioDAO.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarConsulta.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarHorario.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsProcedimentoDAO.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/cidades.php</file>
-=======
-
-            
-            
-            
-            
-            
-            <file>file:/C:/xampp/htdocs/PI_UC12/entrar.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarConsulta.php</file>
-
             <file>file:/C:/xampp/htdocs/PI_UC12/consultas.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCidade.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsHorarioDAO.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/frmCliente.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/model/clsProcedimento.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsCidadeDAO.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarHorario.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCliente.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/menu.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/horarioConsulta.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/model/clsHorario.php</file>
->>>>>>> c2c9f44a5be3b0f6fb6cf69dacbf90c12e2a93e9
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsConsultaDAO.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/frmConsulta.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/procedimentos.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/consultas.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/horarios.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsConexao.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/entrar.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarConsulta.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsProcedimentoDAO.php</file>
-<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/PI_UC12/model/clsConsulta.php</file>
-=======
->>>>>>> 6b3b7a03ad5fc181c2d44ba64b1b192cd828bbed
->>>>>>> c2c9f44a5be3b0f6fb6cf69dacbf90c12e2a93e9
         </group>
     </open-files>
 </project-private>
