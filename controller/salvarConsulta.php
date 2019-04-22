@@ -1,6 +1,7 @@
 <?php
 include_once '../model/clsConsulta.php';
 include_once '../model/clsCliente.php';
+include_once '../model/clsHorario.php';
 include_once '../dao/clsConsultaDAO.php';
 include_once '../dao/clsClienteDAO.php';
 include_once '../dao/clsConexao.php';
@@ -14,18 +15,18 @@ if( isset($_REQUEST['inserir'])  ){
         $cliente->setNome( $_SESSION['nome'] );
         $consulta->setCliente($cliente);
         
-        $valor = $_POST['txtValor'];
-        $valor = str_replace(",", ".", $valor);
-        $consulta->setValor( $valor );
+        //$valor = $_POST['txtValor'];
+        //$valor = str_replace(",", ".", $valor);
+        //$consulta->setValor( $valor );
         
         $horario = new Horario();
         $horario->setId( $_POST['horario']  );
         $consulta->setHorario( $horario );
    
         
-        $medico = new medico();
-        $med->setId( $_POST['medico']);
-        $consulta->setMedico( $med ); 
+        $medico = new Cliente();
+        $medico->setId( $_POST['medico']);
+        $consulta->setMedico( $medico ); 
         
         ConsultaDAO::inserir( $consulta );
         
@@ -42,9 +43,9 @@ if( isset($_REQUEST['editar'])){
     
     $consulta->setNome( $_POST['txtNome'] );
     
-    $consulta = $_POST['txtValor'];
-    $valor = str_replace(",", ".", $valor);
-    $consulta->setValor( $valor );
+    //$consulta = $_POST['txtValor'];
+    //$valor = str_replace(",", ".", $valor);
+    //$consulta->setValor( $valor );
     
     $hor = $_POST['txtHorario'];
     $hor = str_replace(",", ".", $hor);
