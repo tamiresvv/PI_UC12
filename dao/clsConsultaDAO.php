@@ -4,12 +4,13 @@
 class ConsultaDAO {
     public static function inserir( $consulta ){
         $sql = " INSERT INTO consultas "
-             . " (codCliente, codMedico, valor, horario) "
+             . " (codCliente, codMedico, valor, data, codHorario) "
              . " VALUES ( "
              . $consulta->getCliente()->getId()      . " , "
              . $consulta->getMedico()->getId()       . " , "
              . $consulta->getValor()                 . " , "
-             . $consulta->getHorario()               . "  ) ";
+             . " '". $consulta->getData()            . "'  , "
+             . $consulta->getHorario()->getId()      . "  ) ";
         
         Conexao::executar($sql);
     }
@@ -20,6 +21,7 @@ class ConsultaDAO {
                 . " cliente =        '".$consulta->getMedico()->getId()."' , "
                 . " valor =          '".$consulta->getValor()."' , "
                 . " horario =        '".$consulta->getHorario()
+                . " data =           '".$consulta->getData()
                 . " WHERE id =        ".$consulta->getId();
         
         Conexao::executar( $sql );
@@ -33,16 +35,17 @@ class ConsultaDAO {
     }
     
     public static function getConsultas(){
-        $sql = " SELECT c.id, DATE_FORMAT(c.horario,'%d/%m/%Y %H:%i'), c.valor, p.id, p.nome, m.id, m.nome  "
+        $sql = " SELECT c.id, DATE_FORMAT(c.data, '%d/%m/%y'), c.valor, p.id, p.nome, m.id, m.nome "
              . " FROM consultas c "
              . " INNER JOIN clientes p ON p.id = c.codCliente "
              . " INNER JOIN clientes m ON m.id = c.codMedico  "
-             . " ORDER BY c.horario DESC ";
+             . " INNER JOIN horarios h ON h.id = c.codHorario  "
+             . " ORDER BY c.data DESC ";
 
         
         $result = Conexao::consultar($sql);
         $lista = new ArrayObject();
-        while( list( $cod,  $horario, $valor, $idPac, $nomePac, $idMed, $nomeMed ) = mysqli_fetch_row($result) ){
+        while( list( $codHorario,  $data, $valor, $idPac, $nomePac, $idMed, $nomeMed ) = mysqli_fetch_row($result) ){
             $paciente = new Cliente();
             $paciente->setId($idPac);
             $paciente->setNome($nomePac);
@@ -52,8 +55,9 @@ class ConsultaDAO {
             $medico->setNome($nomeMed);
             
             $consulta = new Consulta();
-            $consulta->setId($cod);
+            $consulta->setId($codHorario);
             $consulta->setValor($valor);
+            $consulta->setData($data);
             $consulta->setHorario($horario);
             $consulta->setCliente($paciente);
             $consulta->setMedico($medico);

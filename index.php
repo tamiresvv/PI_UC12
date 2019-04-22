@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Vision Life</title>
+        <link href="estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         
