@@ -8,8 +8,8 @@ $action = "inserir";
 
 if( isset($_REQUEST['editar'])) {  
     $id = $_REQUEST['idHorario'];
-    $horario = HorarioDAO::getHorarioById($id); 
-    $hora = $procedimento->getHora(); 
+    $horario = HorarioDAO::getHorariosById($id); 
+    $hora = $horario->getHora(); 
     $action = "editar&idHorario=".$horario->getId();
 }
 
@@ -66,7 +66,7 @@ if( isset($_REQUEST['editar'])) {
                     echo '<td>'.$horario->getId().'</td>';   
                     echo '<td>'.$horario->getHora().'</td>'; 
                     echo '<td> 
-                            <a href="?editar&idProcedimento='.$horario->getId().'">
+                            <a href="?editar&idHorario='.$horario->getId().'">
                             
                             <button>Editar</button></a>
                         </td>';    

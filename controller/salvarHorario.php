@@ -35,7 +35,7 @@ if( isset( $_REQUEST['editar'] ) ){
     
     $horario = new Horario();
     $horario->setId($id);
-    $horario->setNome($_POST['txtHora']);
-    ProcedimentoDAO::editar($horario);
-    header("Location: ../horarios.php");
+    $horario->setHora($_POST['txtHora']);
+    HorarioDAO::editar($horario);
+    header("Location: ../horarioConsulta.php");
 }
