@@ -5,6 +5,7 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 ?>
 <header>
     <div id="menu">
+        <img id="logo" src="imagens/logo.png" alt="VL"   
     <a href="index.php">Início</a>
     <a href="horarios.php">Sobre</a>
     
@@ -13,9 +14,11 @@ if (session_status() != PHP_SESSION_ACTIVE) {
             !$_SESSION['logado'] ) {
         ?>
      <a href="frmCliente.php">Cadastre-se</a>
-    |      
+    |
+    <img id="usuario" src="imagens/usuario3.png" alt="botao">
+     
         
-        <form action="entrar.php" method="POST" >
+    <form id="formulario" action="entrar.php" method="POST" >
             <input type="text" name="txtLogin" required
                    placeholder="E-mail ou CPF: " />
 
