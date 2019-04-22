@@ -13,6 +13,7 @@ if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
     <head>
         <meta charset="UTF-8">
         <title>Vision Life - Clientes</title>
+        <link href="estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <?php
