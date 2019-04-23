@@ -1,8 +1,10 @@
 <?php
 include_once '../model/clsConsulta.php';
+include_once '../model/clsProcedimento.php';
 include_once '../model/clsCliente.php';
 include_once '../model/clsHorario.php';
 include_once '../dao/clsConsultaDAO.php';
+include_once '../dao/clsProcedimentoDAO.php';
 include_once '../dao/clsClienteDAO.php';
 include_once '../dao/clsConexao.php';
 session_start();
@@ -15,9 +17,14 @@ if( isset($_REQUEST['inserir'])  ){
         $cliente->setNome( $_SESSION['nome'] );
         $consulta->setCliente($cliente);
         
-        //$valor = $_POST['txtValor'];
-        //$valor = str_replace(",", ".", $valor);
-        //$consulta->setValor( $valor );
+        $procedimento = ProcedimentoDAO::getProcedimentoById($_POST['procedimento']  );
+        
+//       $valor->setId($_POST['txtValor'] );
+//       $valor = str_replace(",", ".", $valor);
+       $consulta->setValor( $procedimento->getValor() );
+       $consulta->setProcedimento($procedimento); 
+        
+       $consulta->setData($_POST['txtData']);
         
         $horario = new Horario();
         $horario->setId( $_POST['horario']  );
