@@ -15,6 +15,7 @@
     <body>
         <?php
             require_once 'menu.php';
+            require_once 'menu02.php';
         ?>
         
         <h1 align="center">Consultas</h1>

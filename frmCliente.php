@@ -43,6 +43,7 @@ if (isset($_REQUEST['editar'])) {
     <body>
         <?php
         require_once 'menu.php';
+        require_once 'menu02.php';
         ?>
 
         <h1 align="center">Cadastrar Cliente</h1>

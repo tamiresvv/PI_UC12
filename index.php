@@ -9,11 +9,12 @@
         
         <?php
             require_once 'menu.php';
+            require_once 'menu02.php';
         ?>
         
-        <br> <br> <br> <br> 
+        <br><br><br><br><br><br><br><br>
         
-        <h1 align="center">Vision Life Oftalmologia</h1>
+        <img id="olho" src="imagens/olho.PNG" alt="botao">
         
         <?php
             
