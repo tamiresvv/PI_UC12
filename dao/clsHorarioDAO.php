@@ -12,7 +12,7 @@ class HorarioDAO {
     
     public static function editar( $horario ){
         $sql =    "UPDATE horarios SET "
-                . " nome = '".$horario->getHora()."' "
+                . " hora = '".$horario->getHora()."' "
                 . " WHERE id = ".$horario->getId();
         Conexao::executar($sql);
         
@@ -39,17 +39,17 @@ class HorarioDAO {
         return $lista;
     }
     public static function getHorariosById( $id ){
-        $sql = " SELECT h.id, h.horarios"
+        $sql = " SELECT h.id, h.hora "
              . " FROM horarios h "
-             . " WHERE h.id = ".$id 
-             . " ORDER BY h.horarios ";
+             . " WHERE h.id = ".$id ;
+
         $result = Conexao::consultar($sql);
         list($_id, $_horarios) = mysqli_fetch_row($result);{
-                $horarios = new Horario();
-                $horarios->setId($_id);
-                $horarios->setHora($_horarios);
+                $horario = new Horario();
+                $horario->setId($_id);
+                $horario->setHora($_horarios);
         }        
-        return $horarios;
+        return $horario;
     }
     
     
