@@ -1,6 +1,7 @@
 <?php
     include_once 'dao/clsClienteDAO.php';
     include_once 'model/clsConsulta.php';
+    include_once 'model/clsHorario.php';
     include_once 'model/clsCliente.php';
     include_once 'dao/clsConexao.php';
     include_once 'dao/clsConsultaDAO.php';
@@ -59,8 +60,7 @@
                         $valor = str_replace(".", ",",$con->getValor() );
                         echo '   <td>R$ '.$valor.'</td>';
                         
-                        $hor = str_replace(".", ",",$con->getHorario() );
-                        echo '   <td>'.$hor.'</td>';
+                        echo '   <td>'.$con->getHorario()->getHora().'</td>';
                         
                         
                       
