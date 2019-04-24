@@ -6,9 +6,9 @@
 
             <file>file:/C:/xampp/htdocs/PI_UC12/model/clsCliente.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarProcedimento.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsHorarioDAO.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarHorario.php</file>
-         <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCidade.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/model/clsHorario.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsConsultaDAO.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarCidade.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/model/clsProcedimento.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsCidadeDAO.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/consultas.php</file>

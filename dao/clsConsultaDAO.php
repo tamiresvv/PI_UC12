@@ -47,7 +47,7 @@ class ConsultaDAO {
         
         $result = Conexao::consultar($sql);
         $lista = new ArrayObject();
-        while( list( $codConsulta, $data, $valor, $idPac, $nomePac, $idMed, $nomeMed, $idHorario, $horaHorario ) = mysqli_fetch_row($result) ){
+        while( list( $codConsulta, $data, $valor, $idPac, $nomePac, $idMed, $nomeMed, $idHorario, $nomeHorario ) = mysqli_fetch_row($result) ){
             $paciente = new Cliente();
             $paciente->setId($idPac);
             $paciente->setNome($nomePac);
@@ -57,7 +57,7 @@ class ConsultaDAO {
             $medico->setNome($nomeMed);
             $horario = new Horario();
             $horario->setId($idHorario);
-            $horario->setHora($horaHorario);
+            $horario->setHora($nomeHorario);
             
             $consulta = new Consulta();
             $consulta->setId($codConsulta);
