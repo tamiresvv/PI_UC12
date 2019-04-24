@@ -46,7 +46,7 @@ if( isset($_REQUEST['inserir'])  ){
 if( isset($_REQUEST['editar'])){
     
     $id = $_REQUEST['idConsulta'];
-    $consulta = ConsultaDAO::getConsultasById($id);
+    $consulta = ConsultaDAO::getConsultaById($id);
     
     $consulta->setNome( $_POST['txtNome'] );
     
@@ -71,7 +71,7 @@ if( isset($_REQUEST['editar'])){
 
 if( isset($_REQUEST['excluir'])){
     $id = $_REQUEST['idConsulta'];
-    $consulta = consultaDAO::getConsultasById($id);
+    $consulta = consultaDAO::getConsultaById($id);
     echo '<br><br><hr> '
        . '<h3>Confirma o cancelamento da consulta ?  '
        .$consulta->getNome(). '? </h3> '
@@ -83,7 +83,7 @@ if( isset($_REQUEST['excluir'])){
 
 if( isset( $_REQUEST['confirmaExcluir'] ) ){
     $id = $_REQUEST['idConsulta'];
-    $consulta = ConsultaDAO::getConsultasById($id);
+    $consulta = ConsultaDAO::getConsultaById($id);
     ConsultaDAO::excluir($consulta);
     header("Location: ../consultas.php");
 }
