@@ -9,6 +9,7 @@ include_once 'dao/clsProcedimentoDAO.php';
 include_once 'dao/clsHorarioDAO.php';
 include_once 'dao/clsConexao.php';
 
+
 session_start();
 
 $idMedico = 0;
