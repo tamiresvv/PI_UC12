@@ -6,9 +6,9 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 <header>
     <div id="menu02">   
     <img id="logo" src="imagens/logo.png" alt="logo">   
-    <?php
-    echo '   Olá, ' . $_SESSION['nome'];
-    ?>
+    //<?php
+//    echo '   Olá, ' . $_SESSION['nome'];
+//    ?>
     <a href="index.php">Início</a>
     <a href="horarios.php">Sobre</a>
     

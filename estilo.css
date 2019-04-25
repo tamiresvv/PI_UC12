@@ -17,8 +17,6 @@ body{
     padding-top: 30px;
     padding-left: 200px;
     font-family: "Calibri";
-    
-    
 }
 /*#menu a{
     float: right;
@@ -26,14 +24,8 @@ body{
 #menu form{
     float: left;
     height: 10px;
-    border: 1px solid black;
+    padding-top: 12px;
 } 
-#menu img{
-    float: left;
-    height: 10px;
-    border: 1px solid black;
-}
-
 #menu02{
     color: white;
     width: 100%;
@@ -42,7 +34,7 @@ body{
     display: inline-block;
     padding-bottom: 30px;
     margin-bottom: 0px;
-    padding-top: 15px;
+    padding-top: 10px;
     padding-left: 190px;
     font-family: "Calibri";
     float: left;
@@ -53,14 +45,12 @@ body{
     color: #00688B;
     text-decoration: none;
     margin: 0px 0px;
-    padding: 60px 60px 60px 30px;
+    padding: 30px 60px 60px 30px;
     font-size: 16px;
     font-family: "Calibri";
     float: left;
 }
 #menu02 a:hover{
-    background-color: lightgray;
-    color: white;
     cursor: pointer;
 }
 #logo{
@@ -69,22 +59,39 @@ body{
     padding-right: 200px;
 }
 #olho{
-    width: 100%; height: 420px;
+    width: 100%; height: 699px;
+    position: absolute;
 }
 #facebook{
     padding-left: 30px;
+    padding-top: 20px; 
+    width: 30px; height: 30px;
+}
+#instagram{
+    padding-left: 30px;
+    padding-top: 20px; 
+    width: 30px; height: 30px;
+}
+#twitter{
+    padding-left: 30px;
     padding-top: 20px;
-    
+    width: 30px; height: 30px;
 }
 #divface{
-    width: 300px;
+    width: 600px;
     float: right;
 }
-#usuario{
+#redes{
+    color: white;
+    width: 135px;
+    float: right;
     padding-top: 28px;
+}
+#usuario{
+    padding-top: 18px;
     padding-right: 10px;
     padding-left: 10px;
-    width: 20px; height: 60px;
+    width: 25px; height: 25px;
     float: left;
 }
 #facebook{
@@ -138,3 +145,30 @@ body{
     -webkit-transition: width 1s;                      
 }
 
+#marcarConsulta{
+    width: 1150px; height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 370px;
+    margin-top: 630px;
+    position: relative;
+}
+#lblmarcar{
+    font-size: 30px;
+    margin: 60px 0px 0px 50px;
+    position: absolute;
+    color: #00688B;
+    font-weight: bold;
+}
+#btnMarcar{
+    margin: 50px 0px 0px 780px;
+    position: absolute;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #00688B;
+    border: none;
+    color: white;
+    font-size: 20px;
+    
+}

@@ -14,7 +14,12 @@
         
         <br><br><br><br><br><br><br><br>
         
-        <img id="olho" src="imagens/olho.PNG" alt="botao">
+        <img id="olho" src="imagens/olho.JPG" alt="botao">
+        
+        <div id="marcarConsulta">
+            <label id="lblmarcar">Marque sua consulta conosco</label>
+            <a href="frmConsulta.php"><button id="btnMarcar">Marcar consulta</button></a>
+        </div>
         
         <?php
             
