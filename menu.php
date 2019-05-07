@@ -5,7 +5,12 @@ if (session_status() != PHP_SESSION_ACTIVE) {
 ?>
 <header>
     <div id="menu">
-    |
+     <?php
+    if (!isset($_SESSION['logado']) ||
+            !$_SESSION['logado'] ) {
+        ?>
+    
+<!--    |-->
         <img id="usuario" src="imagens/usuario3.png" alt="botao">
 
         <form id="formulario" action="entrar.php" method="POST" >
@@ -16,9 +21,12 @@ if (session_status() != PHP_SESSION_ACTIVE) {
                        placeholder="Senha: " required />
 
                 <input type="submit" value="Entrar" />
-
         </form>
-        
+        <?php
+            }else{
+                echo '   Olá, ' . $_SESSION['nome'];
+            }
+        ?>
         <div id="divface">
        <a href="https://www.facebook.com/ClinicaVisionLife"><img id="facebook" src="imagens/facebook.png" alt="fb"></a> 
        <a href="https://www.instagram.com/clinicavisionlife/?hl=pt-br"><img id="instagram" src="imagens/instagram.png" alt="insta"></a> 

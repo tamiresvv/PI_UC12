@@ -31,8 +31,6 @@ if( isset( $_REQUEST['confirmaExcluir'] ) ){
 }
 if( isset( $_REQUEST['editar'] ) ){
     $id = $_REQUEST['idHorario'];
-    
-    
     $horario = new Horario();
     $horario->setId($id);
     $horario->setHora($_POST['txtHora']);
