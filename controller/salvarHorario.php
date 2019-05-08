@@ -31,11 +31,9 @@ if( isset( $_REQUEST['confirmaExcluir'] ) ){
 }
 if( isset( $_REQUEST['editar'] ) ){
     $id = $_REQUEST['idHorario'];
-    
-    
     $horario = new Horario();
     $horario->setId($id);
-    $horario->setNome($_POST['txtHora']);
-    ProcedimentoDAO::editar($horario);
-    header("Location: ../horarios.php");
+    $horario->setHora($_POST['txtHora']);
+    HorarioDAO::editar($horario);
+    header("Location: ../horarioConsulta.php");
 }

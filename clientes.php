@@ -18,6 +18,7 @@ if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
     <body>
         <?php
             require_once 'menu.php';
+            require_once 'menu02.php';
         ?>
         
         <h1 align="center">Clientes</h1>

@@ -1,5 +1,6 @@
 body{
-    background-color: #DBF5F7;
+    width: 100%;
+    background-color: white;
     background-repeat: no-repeat;
     font-family: "Calibri Light";
     color: #122E30;
@@ -7,29 +8,123 @@ body{
 }
 #menu{
     color: white;
-    width: 100%;
-    height: 40px;
-    background-color: #79CDCD;
-    /*display: inline-block;*/
-    border-bottom: 1px solid #528B8B;
-    padding-bottom: 5px;
-    padding-top: 20px;
-    padding-left: 15px;
+    width: 90%;
+    height: 50px;
+    background-color: #89cbc0;
+    display: inline-block;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    padding-top: 30px;
+    padding-left: 200px;
     font-family: "Calibri";
+}
+/*#menu a{
+    float: right;
+}*/
+#menu form{
+    float: left;
+    height: 10px;
+    padding-top: 12px;
+} 
+#menu02{
+    color: white;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    display: inline-block;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-left: 190px;
+    font-family: "Calibri";
+    float: left;
     
 }
-#menu a{
-    background-color: #AEEEEE;
-    color: white;
+#menu02 a{
+    background-color: white;
+    color: #00688B;
     text-decoration: none;
-    margin: 0px 5px;
-    padding: 10px;
+    margin: 0px 0px;
+    padding: 30px 60px 60px 30px;
     font-size: 16px;
     font-family: "Calibri";
     float: left;
 }
-#menu a:hover{
-    background-color: #CFCFCF;
+#menu02 a:hover{
+    cursor: pointer;
+}
+#logo{
+    width: 342px; height: 130px;
+    float: left;
+    padding-right: 200px;
+}
+#olho{
+    width: 100%; height: 699px;
+    position: absolute;
+}
+#facebook{
+    padding-left: 30px;
+    padding-top: 20px; 
+    width: 30px; height: 30px;
+}
+#instagram{
+    padding-left: 30px;
+    padding-top: 20px; 
+    width: 30px; height: 30px;
+}
+#twitter{
+    padding-left: 30px;
+    padding-top: 20px;
+    width: 30px; height: 30px;
+}
+#divface{
+    width: 600px;
+    float: right;
+}
+#redes{
+    color: white;
+    width: 135px;
+    float: right;
+    padding-top: 28px;
+}
+#usuario{
+    padding-top: 18px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 25px; height: 25px;
+    float: left;
+}
+#facebook{
+    width: 30px; height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 0px;
+}
+
+#formulario input[type="submit"]{
+     padding: 10px 15px 10px 15px;
+     border-radius: 8px;
+     border: none;
+     background-color: white;
+     color: #00688B;
+     cursor: pointer;
+}
+#formulario input[type="text"]{
+    padding: 8px 8px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    
+}
+#formulario input[type="password"]{
+    padding: 8px 8px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+}
+
+#formulario{
+    padding-top: 1px;
+    border-radius: 10px;
+    background-position: left; 
 }
 
 #container{
@@ -38,7 +133,6 @@ body{
 #container2{
     margin: 15px;
 }
-
 #login{
     background-repeat: no-repeat;
     padding: 12px 45px;
@@ -48,7 +142,33 @@ body{
     font-size: 11px;
     width: 100px;
     transition: width 1s;
-    -webkit-transition: width 1s;                    
-    
+    -webkit-transition: width 1s;                      
 }
 
+#marcarConsulta{
+    width: 1150px; height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 370px;
+    margin-top: 630px;
+    position: relative;
+}
+#lblmarcar{
+    font-size: 30px;
+    margin: 60px 0px 0px 50px;
+    position: absolute;
+    color: #00688B;
+    font-weight: bold;
+}
+#btnMarcar{
+    margin: 50px 0px 0px 780px;
+    position: absolute;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #00688B;
+    border: none;
+    color: white;
+    font-size: 20px;
+    
+}

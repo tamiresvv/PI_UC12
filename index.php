@@ -9,11 +9,17 @@
         
         <?php
             require_once 'menu.php';
+            require_once 'menu02.php';
         ?>
         
-        <br> <br> <br> <br> 
+        <br><br><br><br><br><br><br><br>
         
-        <h1 align="center">Vision Life Oftalmologia</h1>
+        <img id="olho" src="imagens/olho.JPG" alt="botao">
+        
+        <div id="marcarConsulta">
+            <label id="lblmarcar">Marque sua consulta conosco</label>
+            <a href="frmConsulta.php"><button id="btnMarcar">Marcar consulta</button></a>
+        </div>
         
         <?php
             

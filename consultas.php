@@ -1,6 +1,7 @@
 <?php
     include_once 'dao/clsClienteDAO.php';
     include_once 'model/clsConsulta.php';
+    include_once 'model/clsHorario.php';
     include_once 'model/clsCliente.php';
     include_once 'dao/clsConexao.php';
     include_once 'dao/clsConsultaDAO.php';
@@ -15,11 +16,11 @@
     <body>
         <?php
             require_once 'menu.php';
+            require_once 'menu02.php';
         ?>
         
-        <h1 align="center">Consultas</h1>
         
-        <br><br><br>
+        <br><br><br><br><br><br><br><br><br>
           <a href="frmConsulta.php">
                     <button>Marcar nova Consulta</button></a>
                 <br><br>
@@ -36,6 +37,9 @@
                 echo '<h3><b>Nenhuma Consulta Marcada!</b></h3>';
             } else {
               
+        ?>
+                <?php
+    if (isset($_SESSION['logado']) || $_SESSION['logado'] ) {
         ?>
         <table border="1">
             <tr>
@@ -58,8 +62,7 @@
                         $valor = str_replace(".", ",",$con->getValor() );
                         echo '   <td>R$ '.$valor.'</td>';
                         
-                        $hor = str_replace(".", ",",$con->getHorario() );
-                        echo '   <td>'.$hor.'</td>';
+                        echo '   <td>'.$con->getHorario()->getHora().'</td>';
                         
                         
                       
@@ -76,7 +79,7 @@
         <?php
         
             }
-            
+            }
         ?>
         
     </body>

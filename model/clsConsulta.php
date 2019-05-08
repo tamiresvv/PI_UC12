@@ -1,15 +1,16 @@
 <?php
 
 class Consulta {
-    private $id, $cliente, $medico, $horario, $valor, $data;
+    private $id, $cliente, $medico, $horario, $valor, $data, $procedimento;
     
-    function __construct($id = NULL, $cliente = NULL, $medico = NULL, $horario = NULL, $valor = NULL, $data = NULL) {
+    function __construct($id = NULL, $cliente = NULL, $medico = NULL, $horario = NULL, $valor = NULL, $data = NULL, $procedimento = NULL) {
         $this->id = $id;
         $this->cliente = $cliente;
         $this->medico = $medico;
         $this->horario = $horario;
         $this->valor = $valor;
         $this->data = $data;
+        $this->procedimento = $procedimento;
     }
     function getId() {
         return $this->id;
@@ -33,7 +34,9 @@ class Consulta {
     function getValor() {
         return $this->valor;
     }
-
+    function getProcedimento(){
+        return $this->procedimento;
+    }
     function setId($id) {
         $this->id = $id;
     }
@@ -55,6 +58,9 @@ class Consulta {
     }
     function setData($data) {
         $this->data = $data;
+    }
+    function setProcedimento($procedimento) {
+        $this->procedimento = $procedimento;
     }
 
 

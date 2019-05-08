@@ -43,11 +43,11 @@ if (isset($_REQUEST['editar'])) {
     <body>
         <?php
         require_once 'menu.php';
+        require_once 'menu02.php';
         ?>
 
-        <h1 align="center">Cadastrar Cliente</h1>
 
-        <br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
 
         <form action="controller/salvarCliente.php?<?php echo $action; ?>" method="POST" 
               enctype="multipart/form-data">

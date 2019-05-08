@@ -8,12 +8,17 @@ include_once 'dao/clsClienteDAO.php';
 include_once 'dao/clsProcedimentoDAO.php';
 include_once 'dao/clsHorarioDAO.php';
 include_once 'dao/clsConexao.php';
+include_once 'dao/clsConsultaDAO.php';
+include_once 'model/clsConsulta.php';
 
 session_start();
 
 $idMedico = 0;
+$idHorario = 0;
 $idProcedimento = 0;
 $horario = "";
+$procedimento = "";
+$medico = "";
 $action = "inserir";
 $data = "";
 if (isset($_REQUEST['editar'])) {
@@ -21,7 +26,11 @@ if (isset($_REQUEST['editar'])) {
     $consulta = ConsultaDAO::getConsultaById($id);
     $medico = $consulta->getMedico();
     $horario = $consulta->getHorario();
-    
+    $procedimento = $consulta->getProcedimento();
+    $idHorario = $horario->getId();
+    $idProcedimento = $procedimento->getId();
+    $idMedico = $medico->getId();
+    $data = $consulta->getData();
     $action = "editar&idConsulta=" . $consulta->getId();
 }
 
@@ -39,10 +48,11 @@ if (isset($_REQUEST['editar'])) {
     <body>
         <?php
         require_once 'menu.php';
+        require_once 'menu02.php';
         ?>
-         <h1 align="center">Cadastrar Consulta</h1>
+         
 
-        <br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br>
         <form action="controller/salvarConsulta.php?<?php echo $action; ?>" method="POST" 
               enctype="multipart/form-data">
             
