@@ -12,17 +12,20 @@ session_start();
 if( isset($_REQUEST['inserir'])  ){
     
         $consulta= new Consulta();
+        
         $cliente = new Cliente();
         $cliente->setId($_SESSION['idCliente']);
         $cliente->setNome( $_SESSION['nome'] );
         $consulta->setCliente($cliente);
         
-        $procedimento = ProcedimentoDAO::getProcedimentoById($_POST['procedimento']  );
+//       $procedimento = ProcedimentoDAO::getProcedimentoById($_POST['procedimento']  );
+//       $consulta->setValor( $procedimento->getValor() );
+//       $consulta->setProcedimento($procedimento); 
         
-//       $valor->setId($_POST['txtValor'] );
-//       $valor = str_replace(",", ".", $valor);
-       $consulta->setValor( $procedimento->getValor() );
-       $consulta->setProcedimento($procedimento); 
+        $procedimento = new Procedimento();
+        $procedimento->setId( $_POST['procedimento']);
+        $procedimento->setValor( $_POST['procedimento']);
+        $consulta->setProcedimento( $procedimento ); 
         
        $consulta->setData($_POST['txtData']);
         
@@ -43,23 +46,34 @@ if( isset($_REQUEST['inserir'])  ){
 
 if( isset( $_REQUEST['editar'] ) ){
     $id = $_REQUEST['idConsulta'];
+    $consulta = ConsultaDAO::getConsultaById($id);
     
     $consulta = new Consulta();
     $consulta->setId($id);
-    $consulta->setNome($_POST['txtNome']);
-    $horario = $_POST['txtHorario'];
-    $horario = str_replace(",", ".", $hor);
-    $consulta->setHorario( $horario );
-
-
-    $med = new Medico();
-    $med->setId( $_POST['medico']);
-    $consulta->setCategoria( $med );
+ 
+    $medico = new Cliente();
+    $medico->setId( $_POST['medico']);
+    $consulta->setMedico( $medico );
+    
+    $horario = new Horario();
+    $horario->setId( $_POST['horario']);
+    $consulta->setHorario($horario);
+    
+    $cliente = new Cliente();
+    $cliente->setId($_SESSION['idCliente']);
+    $cliente->setNome( $_SESSION['nome'] );
+    $consulta->setCliente($cliente);
+    
+    $procedimento = new Procedimento();
+    $procedimento->setId( $_POST['procedimento']);
+    $consulta->setProcedimento( $procedimento ); 
+        
+    $consulta->setData($_POST['txtData']);
    
     
     ConsultaDAO::editar($consulta);
     header("Location: ../consultas.php");
-}
+    
 
 //if( isset($_REQUEST['editar'])){
 //    
@@ -87,24 +101,6 @@ if( isset( $_REQUEST['editar'] ) ){
 //    
 //}
 
-//if( isset($_REQUEST['excluir'])){
-//    $id = $_REQUEST['idConsulta'];
-//    $consulta = consultaDAO::getConsultaById($id);
-//    echo '<br><br><hr> '
-//       . '<h3>Confirma o cancelamento da consulta ?  '
-//       .$consulta->getNome(). '? </h3> '
-//       . '<br><hr>';
-//    echo  '<a href="?confirmaExcluir&idConsulta='.$id.'">'
-//        . '    <button>SIM</button></a> ';
-//    echo '<a href="../consulta.php" ><button>NÃO</button></a>';
-//}
-//
-//if( isset( $_REQUEST['confirmaExcluir'] ) ){
-//    $id = $_REQUEST['idConsulta'];
-//    $consulta = ConsultaDAO::getConsultaById($id);
-//    ConsultaDAO::excluir($consulta);
-//    header("Location: ../consultas.php");
-//}
 if( isset($_REQUEST['excluir'])){
     $id = $_REQUEST['idConsulta'];
     echo '<br><br><hr> '
@@ -122,3 +118,4 @@ if( isset( $_REQUEST['confirmaExcluir'] ) ){
 }
 
 
+}

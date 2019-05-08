@@ -19,12 +19,12 @@ class ConsultaDAO {
     
     public static function editar($consulta){
         $sql = "UPDATE consultas SET " 
-                . " cliente =        '".$consulta->getCliente()->getId()."' , "
-                . " cliente =        '".$consulta->getMedico()->getId()."' , "
-                . " valor =          '".$consulta->getValor()."' , "
-                . " horario =        '".$consulta->getHorario()
-                . " procedimento =   '".$consulta->getProcedimento()
-                . " data =           '".$consulta->getData()
+                . " codCliente =         ".$consulta->getCliente()->getId()." , "
+                . " codMedico =         ".$consulta->getMedico()->getId()." , "
+                . " valor =          ".$consulta->getValor()." , "
+                . " codHorario =        ".$consulta->getHorario()->getId()." ,"
+                . " codProcedimento =   ".$consulta->getProcedimento()->getId()." ,"
+                . " data =           '".$consulta->getData()."' ,"
                 . " WHERE id =        ".$consulta->getId();
         
         Conexao::executar( $sql );
@@ -47,7 +47,7 @@ class ConsultaDAO {
              . " INNER JOIN procedimentos e ON e.id = c.codProcedimento "
              . " ORDER BY c.data DESC ";
 
-        
+     
         $result = Conexao::consultar($sql);
         $lista = new ArrayObject();
         while( list( $codConsulta, $data, $valor, $idPac, $nomePac, $idMed, $nomeMed, $idHorario, $nomeHorario, $idProcedimento, $nomeProcedimento, $valorProcedimento ) = mysqli_fetch_row($result) ){
