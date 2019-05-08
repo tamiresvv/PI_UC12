@@ -50,9 +50,9 @@ if (isset($_REQUEST['editar'])) {
         require_once 'menu.php';
         require_once 'menu02.php';
         ?>
-         <h1 align="center">Cadastrar Consulta</h1>
+         
 
-        <br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br>
         <form action="controller/salvarConsulta.php?<?php echo $action; ?>" method="POST" 
               enctype="multipart/form-data">
             
