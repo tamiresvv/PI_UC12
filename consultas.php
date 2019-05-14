@@ -5,6 +5,8 @@
     include_once 'model/clsCliente.php';
     include_once 'dao/clsConexao.php';
     include_once 'dao/clsConsultaDAO.php';
+    include_once 'dao/clsProcedimentoDAO.php';
+    include_once 'model/clsProcedimento.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +41,7 @@
               
         ?>
                 <?php
-    if (isset($_SESSION['logado']) || $_SESSION['logado'] ) {
+    if (isset($_SESSION['logado']) && $_SESSION['logado'] ) {
         ?>
         <table border="1">
             <tr>
@@ -47,6 +49,7 @@
                 <th>Nome do Paciente</th>
                 <th>Nome do Medico</th>
                 <th>Valor da Consulta</th>
+                <th>Procedimento</th>
                 <th>Horário</th>
                 <th>Remarcar Consulta</th>
                 <th>Cancelar Consulta</th>
@@ -62,6 +65,7 @@
                         $valor = str_replace(".", ",",$con->getValor() );
                         echo '   <td>R$ '.$valor.'</td>';
                         
+                        echo '   <td>'.$con->getProcedimento()->getNome().'</td>';
                         echo '   <td>'.$con->getHorario()->getHora().'</td>';
                         
                         
@@ -78,6 +82,8 @@
         
         <?php
         
+            }else{
+                
             }
             }
         ?>

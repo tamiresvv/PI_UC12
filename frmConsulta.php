@@ -35,7 +35,6 @@ if (isset($_REQUEST['editar'])) {
     $action = "editar&idConsulta=" . $consulta->getId();
 }
 
-
 ?>
 
 <!DOCTYPE html>
