@@ -11,6 +11,7 @@ include_once 'dao/clsConexao.php';
 include_once 'dao/clsConsultaDAO.php';
 include_once 'model/clsConsulta.php';
 
+
 session_start();
 
 $idMedico = 0;
