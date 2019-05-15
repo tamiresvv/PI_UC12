@@ -21,6 +21,10 @@
             <a href="frmConsulta.php"><button id="btnMarcar">Marcar consulta</button></a>
         </div>
         
+        <div id="rodape">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
+        
         <?php
             
         ?>
