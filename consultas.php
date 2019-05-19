@@ -56,13 +56,17 @@
                 }
                 ?>
                 <?php
-                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
+                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a" || "m"){
                     ?>
                 <th>Nome do Paciente</th>
                 <?php
                 }
+                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "c" || "a"){
                 ?>
                 <th>Nome do Medico</th>
+                <?php
+                }
+                ?>
                 <th>Valor da Consulta</th>
                 <th>Procedimento</th>
                 <th>Horário</th>
@@ -76,11 +80,12 @@
                         if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
                         echo '   <td>'.$con->getId().'</td>';
                         }
-                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
+                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a" || "m"){
                         echo '   <td>'.$con->getCliente()->getNome().'</td>';
                         }
+                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "c" || "a"){
                         echo '   <td>'.$con->getMedico()->getNome().'</td>';
-                        
+                        }
                         $valor = str_replace(".", ",",$con->getValor() );
                         echo '   <td>R$ '.$valor.'</td>';
                         

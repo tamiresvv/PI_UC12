@@ -17,7 +17,7 @@ class ClienteDAO {
                 . "   '".$cliente->getSexo()."' , "
                 . "   '".$cliente->getTipo()."' "
                 . "  ); ";
-        //echo $sql;
+//        echo $sql;
         
         Conexao::executar( $sql );
     }
@@ -53,14 +53,17 @@ class ClienteDAO {
              . " ON c.codCidade = d.id "
              . " WHERE c.tipo = 'c' "
              . " ORDER BY c.nome ";
-        
+//        
+//     echo $sql;
         $result = Conexao::consultar($sql);
         $lista = new ArrayObject();
         while( list( $cod, $nome, $fone, $cpf, $mail,
             $foto, $codCid, $nomeCid, $sexo, $tipo) = mysqli_fetch_row($result) ){
+            
             $cidade = new Cidade();
             $cidade->setId( $codCid );
             $cidade->setNome( $nomeCid );
+            
             $cliente = new Cliente();
             $cliente->setId($cod);
             $cliente->setNome($nome);
@@ -95,6 +98,7 @@ class ClienteDAO {
             $cidade = new Cidade();
             $cidade->setId( $codCid );
             $cidade->setNome( $nomeCid );
+            
             $cliente = new Cliente();
             $cliente->setId($cod);
             $cliente->setNome($nome);
