@@ -48,7 +48,8 @@ if (isset($_REQUEST['editar'])) {
 
 
         <br><br><br><br><br><br><br><br><br><br>
-
+    <div id="cadastro"><label>Preencha todas as informações corretamente!</label></div>
+    <div id="frmCliente">
         <form action="controller/salvarCliente.php?<?php echo $action; ?>" method="POST" 
               enctype="multipart/form-data">
             
@@ -57,7 +58,8 @@ if (isset($_REQUEST['editar'])) {
                        $admin = "";                  
                        $cli = "";                  
                        $med = "";
-                       ?>            
+                       ?> 
+            <div id="tipoCli">
                        <label>Tipo: </label>     
                        <select name="tipo" >
                        <option value="0"  >Selecione...</option>
@@ -74,22 +76,23 @@ if (isset($_REQUEST['editar'])) {
                        
                        ?>
                        </select>
+                       </div>
                        <br><br>
               <?php
                   }
                       ?>
 
-            <label>Nome: </label>
+            <label>Nome*: </label>
             <input type="text" name="txtNome" value="<?php echo $nome; ?>" required maxlength="100" /> <br><br>
             <label>Telefone: </label>
             <input type="text" name="txtTelefone" value="<?php echo $telefone; ?>" maxlength="30" /> <br><br>
-            <label>E-mail: </label>
+            <label>E-mail*: </label>
             <input type="email" name="txtEmail" value="<?php echo $email; ?>" required /> <br><br>
 
-            <label>CPF: </label>
+            <label>CPF*: </label>
             <input type="text" name="txtCPF" value="<?php echo $cpf; ?>" required /> <br><br>
 
-            <label>Cidade: </label>
+            <label>Cidade*: </label>
             <select name="cidade" >
                 <option value="0"  >Selecione...</option>
                 <?php
@@ -136,9 +139,9 @@ if (isset($_REQUEST['editar'])) {
             <?php
             if (!isset($_REQUEST['editar'])) {
                 ?>
-                <label>Senha: </label>
+                <label>Senha*: </label>
                 <input type="password" name="txtSenha" required maxlength="100"  /> <br><br>
-                <label>Confirme sua Senha: </label>
+                <label>Confirme sua Senha*: </label>
                 <input type="password" name="txtSenhaConfirma" required maxlength="100" /> <br>
                 <br><br>
                 <?php
@@ -149,7 +152,10 @@ if (isset($_REQUEST['editar'])) {
 
 
         </form>
+    </div>
 
-
+<div id="rodapeCliente">
+            <img id="rodapeCli" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>

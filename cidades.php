@@ -30,17 +30,17 @@ if( isset($_REQUEST['editar'])) {
             require_once 'menu02.php';
         ?>
         
-        <h1 align="center">Cidades</h1>
+<!--        <h1 align="center">Cidades</h1>-->
         
-        <br><br><br>
-        
+<br><br><br><br><br><br><br><br><br>
+    <div id="frmCidade">
         <form action="controller/salvarCidade.php?<?php echo $action; ?>" method="POST" >
             <label>Nome: </label>
             <input type="text" name="txtNome" value="<?php echo $nome; ?>" />
             <input type="submit" value="Salvar" />
         </form>
+    </div>    
         
-        <hr>
         
         <?php
             
@@ -52,7 +52,7 @@ if( isset($_REQUEST['editar'])) {
                 
             
         ?>
-        
+    <div id="tableCidade">
         <table border="1">
             <tr>
                 <th>Código</th>
@@ -81,11 +81,14 @@ if( isset($_REQUEST['editar'])) {
             ?>
             
         </table>
+        </div>
         
         <br><br><br>
         <?php
           }
         ?>
-        
+        <div id="rodapeCidade">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>

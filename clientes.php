@@ -1,12 +1,11 @@
 <?php
 session_start();
-if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
-    
-
+//if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
     include_once 'model/clsCidade.php';
     include_once 'model/clsCliente.php';
     include_once 'dao/clsConexao.php';
     include_once 'dao/clsClienteDAO.php';
+    include_once 'dao/clsCidadeDAO.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,8 +20,8 @@ if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
             require_once 'menu02.php';
         ?>
         
-        <h1 align="center">Clientes</h1>
-        
+       
+        <br><br><br><br><br><br><br><br><br>
         <br><br><br>
         
         <a href="frmCliente.php">
@@ -33,15 +32,15 @@ if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
             $lista = ClienteDAO::getClientes();
             
             if( $lista->count() == 0 ){
-                echo '<h3><b>Nenhum cliente cadastrado!</b></h3>';
-            } else {
+                echo '<h3><b>Nenhum usuário cadastrado!</b></h3>';
+            }else{
               
         ?>
         <table border="1">
             <tr>
                 <th>Código</th>
                 <th>Foto</th>
-                <th>Nome Paciente</th>
+                <th>Nome</th>
                 <th>CPF</th>
                 <th>Telefone</th>
                 <th>E-mail</th>
@@ -62,18 +61,18 @@ if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
                         echo '   <td>'.$cli->getTelefone().'</td>';
                         echo '   <td>'.$cli->getEmail().'</td>';
                         echo '   <td>'.$cli->getCidade()->getNome().'</td>';
-                        if( $cli->getSexo() == "f" )
-                            echo '   <td>Feminino</td>';
-                        else
-                            echo '   <td>Masculino</td>';
-                        
-                        if( $cli->getTipo() == "a" )
-                            echo '   <td>Admin</td>';
-                        if( $cli->getTipo() == "m")
-                            echo '   <td>Médico</td>';
-                        if( $cli->getTipo() == "c")
-                            echo '   <td>Paciente</td>';
-                        
+                        if ($cli->getSexo() == "f") {
+                echo '   <td>Feminino</td>';
+               }else{
+                echo '   <td>Masculino</td>';}
+
+                        if( $cli->getTipo() == "a" ){
+                        echo '   <td>Admin</td>';}
+                        if( $cli->getTipo() == "m"){
+                        echo '   <td>Médico</td>';}
+                        if( $cli->getTipo() == "c"){
+                        echo '   <td>Paciente</td>';}
+            
                         echo '   <td><a href="frmCliente.php?editar&idCliente='.$cli->getId().'" ><button>Editar</button></a></td>';
                         echo '   <td><a href="controller/salvarCliente.php?excluir&idCliente='.$cli->getId().'" ><button>Excluir</button></a></td>';
                         echo '</tr>';
@@ -88,14 +87,16 @@ if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
             }
             
         ?>
-        
+        <div id="rodapeClientes">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>
 
 <?php
-}else {
-    header("Location: index.php");    
-}
+
+//    header("Location: index.php");    
+
 ?>
 
 

@@ -24,7 +24,9 @@
         
         <br><br><br><br><br><br><br><br><br>
           <a href="frmConsulta.php">
+              <div id="btnMarcarNovaConsulta">
                     <button>Marcar nova Consulta</button></a>
+              </div>
                 <br><br>
         <?php
             if( isset( $_SESSION['admin']) && $_SESSION['admin'] ){
@@ -43,10 +45,23 @@
                 <?php
     if (isset($_SESSION['logado']) && $_SESSION['logado'] ) {
         ?>
+                <div id="tableConsulta">        
         <table border="1">
             <tr>
+                <?php
+                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
+                    ?>
                 <th>Código</th>
+                <?php
+                }
+                ?>
+                <?php
+                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
+                    ?>
                 <th>Nome do Paciente</th>
+                <?php
+                }
+                ?>
                 <th>Nome do Medico</th>
                 <th>Valor da Consulta</th>
                 <th>Procedimento</th>
@@ -58,8 +73,12 @@
             <?php
                     foreach ($lista as $con){
                         echo '<tr> ';
+                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
                         echo '   <td>'.$con->getId().'</td>';
+                        }
+                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
                         echo '   <td>'.$con->getCliente()->getNome().'</td>';
+                        }
                         echo '   <td>'.$con->getMedico()->getNome().'</td>';
                         
                         $valor = str_replace(".", ",",$con->getValor() );
@@ -79,7 +98,7 @@
             ?>
             
         </table>
-        
+        </div>
         <?php
         
             }else{
@@ -87,7 +106,9 @@
             }
             }
         ?>
-        
+        <div id="rodapeConsultas">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>
 

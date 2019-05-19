@@ -8,13 +8,13 @@ body{
 }
 #menu{
     color: white;
-    width: 90%;
-    height: 50px;
+    width: 100%;
+/*    height: 50px;*/
     background-color: #89cbc0;
     display: inline-block;
     padding-bottom: 30px;
     margin-bottom: 0px;
-    padding-top: 30px;
+    padding-top: 30px; 
     padding-left: 200px;
     font-family: "Calibri";
 }
@@ -29,23 +29,23 @@ body{
 #menu02{
     color: white;
     width: 100%;
-    height: 60px;
+    height: 1px;
     background-color: white;
     display: inline-block;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
     margin-bottom: 0px;
     padding-top: 10px;
-    padding-left: 190px;
+    padding-left: 150px;
     font-family: "Calibri";
-    float: left;
+/*    float: left;*/
     
 }
 #menu02 a{
     background-color: white;
     color: #00688B;
     text-decoration: none;
-    margin: 0px 0px;
-    padding: 30px 60px 60px 30px;
+/*    margin-left: 10px;*/
+    padding: 70px 45px 5px 5px;
     font-size: 16px;
     font-family: "Calibri";
     float: left;
@@ -56,10 +56,10 @@ body{
 #logo{
     width: 342px; height: 130px;
     float: left;
-    padding-right: 200px;
+    padding-right: 25px;
 }
 #olho{
-    width: 100%; height: 699px;
+    width: 100%;
     position: absolute;
 }
 #facebook{
@@ -128,10 +128,11 @@ body{
 }
 
 #container{
-    margin: 15px;
+    margin-top: 120px;
+    margin-left: 25px;
 }
 #container2{
-    margin: 15px;
+    margin: 25px;
 }
 #login{
     background-repeat: no-repeat;
@@ -148,8 +149,8 @@ body{
 #marcarConsulta{
     width: 1150px; height: 170px;
     background-color: #EEE9E9;
-    margin-left: 370px;
-    margin-top: 630px;
+    margin-left: 120px;
+    margin-top: 530px;
     position: relative;
 }
 #lblmarcar{
@@ -172,8 +173,453 @@ body{
     font-size: 20px;  
 }
 #rodape{
-    width: 1350px; height: 170px;
+    width: 100%; 
+    height: 170px;
     background-color: #EEE9E9;
     margin-left: 0px;
-    margin-top: 690px;
+    margin-top: 790px;
+}
+#rodapeCliente{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 200px;
+}
+#rodapeClientes{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 200px;
+}
+#rodapeCidade{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 200px;
+}
+#rodapeProced{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 200px;
+}
+#rodapeHora{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 200px;
+}
+#rodapeConsulta{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 420px;
+}
+#rodapeConsultas{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 420px;
+}
+#rodapeHorario{
+    width: 100%; 
+    height: 170px;
+    background-color: #EEE9E9;
+    margin-left: 0px;
+    margin-top: 180px;
+}
+
+#frmCliente{
+    margin-left: 80px;
+    margin-top: 35px;
+    margin-bottom: 60px;
+}
+#frmCliente label{
+    font-size: 16px;
+    color: #00688B;
+}
+#frmCliente input[type="text"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmCliente input[type="email"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmCliente input[type="password"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmCliente select[name="cidade"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey; 
+    color: dimgray;
+}
+#frmCliente input[type="file"]{
+     padding: 10px 15px 10px 15px;
+     border-radius: 8px;
+     border: none;
+     background-color: white;
+     color: #00688B;
+     cursor: pointer;
+}
+#frmCliente input[type="submit"]{
+     padding: 12px 50px 12px 50px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-size: 18px;
+     font-family: "Calibri";
+}
+#frmCliente input[type="reset"]{
+     padding: 12px 50px 12px 50px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-size: 18px;
+     font-family: "Calibri";
+}
+#frmCidade input[type="text"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmCidade{
+    margin-left: 550px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+#frmCidade input[type="submit"]{
+     padding: 12px 50px 12px 50px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-size: 13px;
+     font-family: "Calibri";
+}
+
+#tableCidade{
+    margin-top: 20px;
+    margin-left: 400px;
+}
+#tableCidade table{
+    border-radius: 8px;
+    background-color: #E3E9ED;
+    border: none;  
+}
+#tableCidade  th{
+    border-radius: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;  
+    color: #1D5D82;
+    font-size: 18px;
+    font-family: "Calibri";
+}
+#tableCidade td{
+    border-radius: 8px;
+    border: none;
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+    font-family: "Calibri";
+    color: #91A3AD;
+}
+#tableCidade button{
+     padding: 10px 15px 10px 15px;
+     border-radius: 8px;
+     border: none;
+     background-color: white;
+     color: #00688B;
+     cursor: pointer;
+}
+#frmProced input[type="text"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmProced{
+    margin-left: 380px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+#frmProced input[type="submit"]{
+     padding: 12px 50px 12px 50px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-size: 13px;
+     font-family: "Calibri";
+}
+
+#tableProced{
+    margin-top: 20px;
+    margin-left: 250px;
+}
+#tableProced table{
+    border-radius: 8px;
+    background-color: #E3E9ED;
+    border: none;  
+}
+#tableProced  th{
+    border-radius: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;  
+    color: #1D5D82;
+    font-size: 18px;
+    font-family: "Calibri";
+}
+#tableProced td{
+    border-radius: 8px;
+    border: none;
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+    font-family: "Calibri";
+    color: #91A3AD;
+}
+#tableProced button{
+     padding: 10px 15px 10px 15px;
+     border-radius: 8px;
+     border: none;
+     background-color: white;
+     color: #00688B;
+     cursor: pointer;
+}
+#frmHora input[type="text"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmHora{
+    margin-left: 500px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+#frmHora input[type="submit"]{
+     padding: 12px 50px 12px 50px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-size: 13px;
+     font-family: "Calibri";
+}
+
+#tableHora{
+    margin-top: 20px;
+    margin-left: 400px;
+}
+#tableHora table{
+    border-radius: 8px;
+    background-color: #E3E9ED;
+    border: none;  
+}
+#tableHora  th{
+    border-radius: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;  
+    color: #1D5D82;
+    font-size: 18px;
+    font-family: "Calibri";
+}
+#tableHora td{
+    border-radius: 8px;
+    border: none;
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+    font-family: "Calibri";
+    color: #91A3AD;
+}
+#tableHora button{
+     padding: 10px 15px 10px 15px;
+     border-radius: 8px;
+     border: none;
+     background-color: white;
+     color: #00688B;
+     cursor: pointer;
+}
+#tableConsulta{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#tableConsulta table{
+    border-radius: 8px;
+    background-color: #E3E9ED;
+    border: none;  
+}
+#tableConsulta  th{
+    border-radius: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border: none;  
+    color: #1D5D82;
+    font-size: 18px;
+    font-family: "Calibri";
+}
+#tableConsulta td{
+    border-radius: 8px;
+    border: none;
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+    font-family: "Calibri";
+    color: #91A3AD;
+}
+#tableConsulta button{
+     padding: 10px 15px 10px 15px;
+     border-radius: 8px;
+     border: none;
+     background-color: white;
+     color: #00688B;
+     cursor: pointer;
+}
+#btnMarcarNovaConsulta button{
+     padding: 10px 30px 10px 30px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-family: "Calibri";
+     font-size: 18px;
+     margin-left: 1000px;
+}
+#frmConsulta select[name="procedimento"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmConsulta input[type="date"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmConsulta select[name="medico"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmConsulta select[name="horario"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#tipoCli select[name="tipo"]{
+    padding: 8px 90px 8px 8px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: dimgray;
+}
+#frmConsulta{
+    margin-left: 800px;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    position: absolute;
+}
+#frmConsulta input[type="submit"]{
+     padding: 12px 50px 12px 50px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-size: 13px;
+     font-family: "Calibri";
+}
+#frmConsulta input[type="reset"]{
+     padding: 12px 50px 12px 50px;
+     border-radius: 8px;
+     border: none;
+     background-color: lightgrey;
+     color: dimgray;
+     cursor: pointer;
+     font-size: 13px;
+     font-family: "Calibri";
+}
+
+#localizacao{
+    margin-top: 20px;
+    margin-left: 100px;
+    position: absolute;
+}
+#localizacao label{
+    font-size: 26px;
+    font-family: "Calibri";
+    color: #00688B;
+    font-weight: bold;
+}
+#endereco{
+    margin-top: 60px;
+    margin-left: 100px;
+    position: absolute;
+}
+#endereco label{
+    font-size: 20px;
+    color: dimgray;
+    text-align: left;
+}
+#iconeOlho{
+    margin-top: 5px;
+    margin-left: 790px;
+    position: absolute;
+    
+}
+#iconeOlho img{
+    width: 100px;
+    height: 100px;
+}
+#agendamento{
+    margin-left: 890px;
+    margin-top: 40px;
+    
+}
+#agendamento label{
+    font-size: 20px;
+    font-family: "Calibri";
+    color: #00688B;
+    font-weight: bold;
+}
+#cadastro{
+    margin-left: 80px;
+    margin-top: 10px;
+}
+#cadastro label{
+    font-size: 20px;
+    font-family: "Calibri";
+    color: #00688B;
+    font-weight: bold;
 }
