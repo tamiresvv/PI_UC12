@@ -42,7 +42,7 @@ if (isset($_REQUEST['editar'])) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Vision Life - Consultas</title>
+        <title>Vision Life - Consul tas</title>
         <link href="estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
