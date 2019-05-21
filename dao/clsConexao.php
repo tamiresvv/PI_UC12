@@ -4,9 +4,9 @@ class Conexao {
     
     private static function abrir(){
         $banco = "m171_01_ltem";
-        $local = "localhost";
-        $usuario = "root";
-        $senha = "";
+        $local = "senacinfo-db";
+        $usuario = "inf_m171";
+        $senha = "senacrs";
         
         $conn = mysqli_connect($local, $usuario, $senha, $banco);
         

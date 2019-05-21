@@ -26,6 +26,7 @@
             <a href="frmConsulta.php"><button id="btnMarcar" onclick="funcao1()" value="Exibir alert">Marcar consulta</button></a>
         </div>
         
+        
         <div id="cirurgia">
             <a href="cirurgiaOcular.php"><img id="cirurgia" src="imagens/ciroculares.PNG" alt="cir"></a>
         </div>
@@ -42,7 +43,7 @@
             <img id="teste" src="imagens/oftalmopediatria.png" alt="cir">
         </div>
         <div id="pediatria">
-            <img id="teste" src="imagens/pediatria.png" alt="cir">
+            <img id="pediatria" src="imagens/pediatria.png" alt="cir">
         </div>
         <div id="textOlhinho">
             <a href="testeDoOlhinho.php"><label>TESTE DO OLHINHO</label></a>
