@@ -24,7 +24,9 @@
         
         <br><br><br><br><br><br><br><br><br>
           <a href="frmConsulta.php">
+              <div id="btnMarcarNovaConsulta">
                     <button>Marcar nova Consulta</button></a>
+              </div>
                 <br><br>
         <?php
             if( isset( $_SESSION['admin']) && $_SESSION['admin'] ){
@@ -43,11 +45,28 @@
                 <?php
     if (isset($_SESSION['logado']) && $_SESSION['logado'] ) {
         ?>
+                <div id="tableConsulta">        
         <table border="1">
             <tr>
+                <?php
+                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
+                    ?>
                 <th>Código</th>
+                <?php
+                }
+                ?>
+                <?php
+                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a" || "m"){
+                    ?>
                 <th>Nome do Paciente</th>
+                <?php
+                }
+                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "c" || "a"){
+                ?>
                 <th>Nome do Medico</th>
+                <?php
+                }
+                ?>
                 <th>Valor da Consulta</th>
                 <th>Procedimento</th>
                 <th>Horário</th>
@@ -58,10 +77,15 @@
             <?php
                     foreach ($lista as $con){
                         echo '<tr> ';
+                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
                         echo '   <td>'.$con->getId().'</td>';
+                        }
+                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a" || "m"){
                         echo '   <td>'.$con->getCliente()->getNome().'</td>';
+                        }
+                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "c" || "a"){
                         echo '   <td>'.$con->getMedico()->getNome().'</td>';
-                        
+                        }
                         $valor = str_replace(".", ",",$con->getValor() );
                         echo '   <td>R$ '.$valor.'</td>';
                         
@@ -79,7 +103,7 @@
             ?>
             
         </table>
-        
+        </div>
         <?php
         
             }else{
@@ -87,7 +111,9 @@
             }
             }
         ?>
-        
+        <div id="rodapeConsultas">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>
 

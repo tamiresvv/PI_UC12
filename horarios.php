@@ -12,7 +12,7 @@
             require_once 'menu02.php';
         ?>
         
-        <h1 align="center">Clinica Oftalmologica VisionLife </h1>
+<!--        <h1 align="center">Clinica Oftalmologica VisionLife </h1>-->
         <link href="estilo.css" rel="stylesheet" type="text/css"/>
         <div id="container">
             <br><br>
@@ -73,7 +73,7 @@
         <h3 align="left">CONTATE-NOS:  </h3>             
         
             <?php
-            echo "Telefone: 3226-5066";
+            echo "Telefone: (51) 3024-1818 e 3221-9393";
             ?>
         <br>
         <?php
@@ -81,10 +81,13 @@
         ?>
         <br>
         <?php
-            echo "Endereço: José da Costa Carvalho - Viamão RS";                               
+            echo "Endereço: Av. Borges de Medeiros, 2500 sala 1503";                               
         ?>
         </font> 
             </p>
             </div>
+        <div id="rodapehorario">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>

@@ -53,6 +53,8 @@ if (isset($_REQUEST['editar'])) {
          
 
         <br><br><br><br><br><br><br><br><br><br><br>
+        
+        <div id="frmConsulta">
         <form action="controller/salvarConsulta.php?<?php echo $action; ?>" method="POST" 
               enctype="multipart/form-data">
             
@@ -127,9 +129,29 @@ if (isset($_REQUEST['editar'])) {
             
                 <input type="submit" value="Salvar" />
             <input type="reset" value="Limpar" />
-
-
             
         </form>
+            </div>
+        
+        
+        <div id="localizacao">
+            <label>Centro de Excelência em Oftalmologia</label>
+        </div>
+        <div id="endereco">
+            <label>Av. Borges de Medeiros, 2500 sala 1503</label><br>
+            <label>CEP: 90110-150</label><br>
+            <label>Fones: (51) 3024-1818 e 3221-9393</label><br>
+            <label>Whatsapp: 51 99767.9837</label><br>
+            <label>Email: visionlife@clinica.com</label>
+        </div>
+        <div id="iconeOlho">
+            <img id="iconeoculista" src="imagens/exame.JPG" alt="botao">
+            
+        </div>
+        <div id="agendamento"><label>Agendendamento de consulta</label></div>
+        
+        <div id="rodapeConsulta">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>

@@ -96,6 +96,7 @@ class ConsultaDAO {
 
         
         $result = Conexao::consultar($sql);
+        
         list( $codConsulta, $data, $valor, $idPac, $nomePac, $idMed, $nomeMed, $idHorario, $nomeHorario, $idProcedimento, $nomeProcedimento, $valorProcedimento ) = mysqli_fetch_row($result) ;
             $paciente = new Cliente();
             $paciente->setId($idPac);

@@ -4,7 +4,6 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/PI_UC12/consultas.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/index.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/menu02.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/clientes.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/menu.php</file>
@@ -12,10 +11,15 @@
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsConsultaDAO.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/frmConsulta.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/horarios.php</file>
-            <file>file:/C:/xampp/htdocs/PI_UC12/estilo.css</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/dao/clsConexao.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/controller/salvarConsulta.php</file>
             <file>file:/C:/xampp/htdocs/PI_UC12/model/clsConsulta.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/horarioConsulta.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/estilo.css</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/doencaOcular.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/index.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/oftalmopediatria.php</file>
+            <file>file:/C:/xampp/htdocs/PI_UC12/testeDoOlhinho.php</file>
         </group>
     </open-files>
 </project-private>
