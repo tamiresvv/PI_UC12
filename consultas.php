@@ -1,4 +1,5 @@
 <?php
+
     include_once 'dao/clsClienteDAO.php';
     include_once 'model/clsConsulta.php';
     include_once 'model/clsHorario.php';
@@ -16,16 +17,20 @@
         <link href="estilo.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        
         <?php
+        
             require_once 'menu.php';
             require_once 'menu02.php';
+            
+           
         ?>
         
         
         <br><br><br><br><br><br><br><br><br>
           <a href="frmConsulta.php">
               <div id="btnMarcarNovaConsulta">
-                    <button>Marcar nova Consulta</button></a>
+                  <button>Marcar nova Consulta</button></a>
               </div>
                 <br><br>
         <?php
@@ -56,12 +61,12 @@
                 }
                 ?>
                 <?php
-                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a" || "m"){
+                if(isset($_SESSION['tipo'])&& ($_SESSION['tipo'] == "a" || $_SESSION['tipo'] == "m")){
                     ?>
                 <th>Nome do Paciente</th>
                 <?php
                 }
-                if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "c" || "a"){
+                if(isset($_SESSION['tipo'])&& ($_SESSION['tipo'] == "c" || $_SESSION['tipo'] == "a")){
                 ?>
                 <th>Nome do Medico</th>
                 <?php
@@ -80,10 +85,10 @@
                         if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a"){
                         echo '   <td>'.$con->getId().'</td>';
                         }
-                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "a" || "m"){
+                        if(isset($_SESSION['tipo'])&& ($_SESSION['tipo'] == "a" || $_SESSION['tipo'] == "m")){
                         echo '   <td>'.$con->getCliente()->getNome().'</td>';
                         }
-                        if(isset($_SESSION['tipo'])&& $_SESSION['tipo'] == "c" || "a"){
+                        if(isset($_SESSION['tipo'])&& ($_SESSION['tipo'] == "c" || $_SESSION['tipo'] == "a")){
                         echo '   <td>'.$con->getMedico()->getNome().'</td>';
                         }
                         $valor = str_replace(".", ",",$con->getValor() );
@@ -91,12 +96,11 @@
                         
                         echo '   <td>'.$con->getProcedimento()->getNome().'</td>';
                         echo '   <td>'.$con->getHorario()->getHora().'</td>';
+
                         
+                        echo '   <td><a href="frmConsulta.php?editar&idConsulta='.$con->getId().'" ><button>Remarcar</button></a></td>';                       
+                        echo '   <td><a href="controller/salvarConsulta.php?Excluir&idConsulta='.$con->getId().'" ><button onclick="confirma()">Cancelar</button></a></td>';
                         
-                      
-                        
-                        echo '   <td><a href="frmConsulta.php?editar&idConsulta='.$con->getId().'" ><button  >Remarcar</button></a></td>';
-                        echo '   <td><a href="controller/salvarConsulta.php?excluir&idConsulta='.$con->getId().'" ><button  >Cancelar</button></a></td>';
                         echo '</tr>';
                         
                     }
@@ -115,5 +119,10 @@
             <img id="rodapee" src="imagens/rodape.png" alt="final">     
         </div>
     </body>
+    <script>
+        function confirma(){
+            confirm("Você deseja mesmo cancelar a consulta?");
+        }
+    </script>
 </html>
 

@@ -23,7 +23,14 @@
         
         <div id="marcarConsulta">
             <label id="lblmarcar">Marque sua consulta conosco</label>
-            <a href="frmConsulta.php"><button id="btnMarcar" onclick="funcao1()" value="Exibir alert">Marcar consulta</button></a>
+            <!--<button id="btnMarcar" onclick="funcao1()" value="Exibir alert">Marcar consulta</button>-->
+            <?php
+            if (isset($_SESSION['logado']) && $_SESSION['logado'] ) {
+                echo '<a href="frmConsulta.php"><button id="btnMarcar">Marcar consulta</button></a>'; 
+            } else {
+                echo '<button id="btnMarcar" onclick="funcao1()" value="Exibir alert">Marcar consulta</button>';   
+            }
+            ?>
         </div>
         
         

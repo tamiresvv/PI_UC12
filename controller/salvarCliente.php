@@ -31,7 +31,7 @@ if (isset($_REQUEST['inserir'])) {
 
         ClienteDAO::inserir($cliente);
 
-        header("Location: ../clientes.php");
+        header("Location: ../index.php");
     }
 }
 
