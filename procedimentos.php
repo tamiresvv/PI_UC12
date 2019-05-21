@@ -32,10 +32,10 @@ if( isset($_REQUEST['editar'])) {
             require_once 'menu02.php';
         ?>
         
-        <h1 align="center">Procedimentos</h1>
+<!--        <h1 align="center">Procedimentos</h1>-->
         
-        <br><br><br>
-        
+        <br><br><br><br><br><br><br><br><br>
+        <div id="frmProced">    
         <form action="controller/salvarProcedimento.php?<?php echo $action; ?>" method="POST" >
             <label>Nome: </label>
             <input type="text" name="txtNome" value="<?php echo $nome; ?>" />
@@ -43,8 +43,8 @@ if( isset($_REQUEST['editar'])) {
             <input type="text" name="txtValor" value="<?php echo $valor; ?>" />
             <input type="submit" value="Salvar" />
         </form>
+        </div>
         
-        <hr>
         
         <?php
             
@@ -56,7 +56,7 @@ if( isset($_REQUEST['editar'])) {
                 
             
         ?>
-        
+        <div id="tableProced">
         <table border="1">
             <tr>
                 <th>Código</th>
@@ -88,11 +88,14 @@ if( isset($_REQUEST['editar'])) {
             ?>
             
         </table>
+        </div>
         
         <br><br><br>
         <?php
           }
         ?>
-        
+        <div id="rodapeProced">
+            <img id="rodapee" src="imagens/rodape.png" alt="final">     
+        </div>
     </body>
 </html>
